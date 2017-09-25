@@ -26,15 +26,19 @@ $breakPoint: 650px;
 						left: 0;
 						right: 0;
 						border: 1px solid #e6e6e6;
-						max-height: 370px;
 						box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
-						transition: opacity, 450ms, ease;
-						overflow: auto;
-						display: none;
 						background-color: #ffffff;
+						top: 40px;
+						max-height: 0;
+						overflow: hidden;
+						transform: perspective(400px) rotate3d(1, 0, 0, -90deg);
+						transform-origin: 50% 0;
+						transition: 250ms;
 
 						&--open {
-							display: block;
+							max-height: 370px;
+							transform: perspective(400px) rotate3d(0, 0, 0, 0);
+							overflow: auto;
 						}
 					}
 
