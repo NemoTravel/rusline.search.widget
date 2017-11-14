@@ -1,12 +1,66 @@
-.widget-form{
-  &-search{
-    background-color: $searchFormBGC;
+&{
+  font-family: Roboto,"Open Sans",sans-serif;
 
-    &__wrapper{
-      display: flex;
+  &-form{
+    &-search{
+      background-color: $searchFormBGC;
 
-      .form-group{
-        margin-bottom:0;
+      &__startButton{
+        &.btn-primary{
+          box-shadow: 0 4px 8px 0 rgba(93,134,41,.5), inset 0 1px 2px 0 #b8dc8b;
+          transition: all .1s ease-in;
+          height: 40px;
+          padding: 0 18px;
+          border: none;
+          border-radius: 4px;
+          font-size: 18px;
+          color: #fff;
+          line-height: 35px;
+          background: #88c43d;
+
+          &:hover,
+          &:active{
+            background: #94ca51!important;
+            color: #fff;
+          }
+          &:active{
+            box-shadow: 0 0 0 0.2rem rgba(93, 134, 41, 0.5)!important;
+            border-color: #94ca51!important;
+          }
+        }
+      }
+      &__wrapper{
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        -ms-flex-pack: distribute;
+        justify-content: space-around;
+        -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+
+        .form-group{
+          margin-bottom:0;
+        }
+      }
+    }
+    &-airports__select{
+      .Select-input input{
+        @media (min-width: 1550px) {
+          min-width: 250px;
+        }
+      }
+    }
+    &-dates__col.col{
+      padding: 0!important;
+    }
+  }
+  & &-ui-input_disabled{
+    border-color: #ccc!important;
+  }
+  &-ui-dropdown{
+    &__trigger{
+      .form-control{
+        border-radius: 2px;
       }
     }
   }
