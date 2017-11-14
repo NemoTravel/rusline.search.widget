@@ -6287,6 +6287,17 @@
   font-family: Roboto,"Open Sans",sans-serif;
 }
 
+@media (max-width: 1100px) {
+  .widget .row {
+    -webkit-box-pack: justify;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+    width: 100%;
+    margin-left: 0;
+    margin-right: 0;
+  }
+}
+
 .widget-form-search {
   background-color: #64b5f6;
 }
@@ -6319,14 +6330,33 @@
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -ms-flex-pack: distribute;
-  justify-content: space-around;
   -ms-flex-wrap: wrap;
   flex-wrap: wrap;
 }
 
-.widget-form-search__wrapper .form-group {
-  margin-bottom: 0;
+@media (min-width: 1100px) {
+  .widget-form-search__wrapper {
+    -ms-flex-pack: distribute;
+    justify-content: space-around;
+  }
+}
+
+@media (min-width: 1100px) {
+  .widget-form-search__wrapper .form-group {
+    margin-bottom: 0;
+  }
+}
+
+@media (max-width: 768px) {
+  .widget-form-search__footer .col {
+    padding: 0 !important;
+  }
+}
+
+@media (max-width: 768px) {
+  .widget-form-airports__col.col {
+    padding: 0 !important;
+  }
 }
 
 @media (min-width: 1550px) {
@@ -6341,8 +6371,26 @@
   }
 }
 
-.widget-form-dates__col.col {
-  padding: 0 !important;
+@media (min-width: 1100px) {
+  .widget-form-dates__col.col {
+    padding: 0 !important;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 1100px) {
+  .widget-form-dates__col.col:first-of-type {
+    padding: 0 7.5px 0 15px !important;
+  }
+
+  .widget-form-dates__col.col:last-of-type {
+    padding: 0 15px 0 7.5px !important;
+  }
+}
+
+@media (max-width: 768px) {
+  .widget-form-dates__col.col {
+    padding: 0 !important;
+  }
 }
 
 @media (min-width: 1100px) and (max-width: 1550px) {
