@@ -6284,7 +6284,7 @@
 }
 
 .widget {
-  font-family: Roboto,"Open Sans",sans-serif;
+  font-family: Roboto, "Open Sans", sans-serif;
 }
 
 @media (max-width: 1100px) {
@@ -6347,13 +6347,13 @@
   }
 }
 
-@media (max-width: 768px) {
+@media only screen and (max-width: 768px) {
   .widget-form-search__footer .col {
     padding: 0 !important;
   }
 }
 
-@media (max-width: 768px) {
+@media only screen and (max-width: 768px) {
   .widget-form-airports__col.col {
     padding: 0 !important;
   }
@@ -6387,7 +6387,7 @@
   }
 }
 
-@media (max-width: 768px) {
+@media only screen and (max-width: 768px) {
   .widget-form-dates__col.col {
     padding: 0 !important;
   }

@@ -1,0 +1,27 @@
+@mixin respond-to($media) {
+
+  @if $media == xl {
+    @media (min-width: $xl-device) { @content; }
+  }
+
+  @elseif $media == md {
+    @media (min-width: $md-device) and (max-width: $xl-device) { @content; }
+  }
+
+  @elseif $media == sm {
+    @media (min-width: $sm-device) and (max-width: $md-device) { @content; }
+  }
+
+  @elseif $media == xs {
+    @media only screen and (max-width: $sm-device) { @content; }
+  }
+
+  @elseif $media == max-md {
+    @media (max-width: $md-device) { @content; }
+  }
+
+  @elseif $media == min-md {
+    @media (min-width: $md-device) { @content; }
+  }
+
+}
