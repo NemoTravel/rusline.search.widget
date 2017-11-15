@@ -15,7 +15,7 @@
 
       &__startButton{
         &.btn-primary{
-          box-shadow: 0 4px 8px 0 $searchBtnBophonehadow, inset 0 1px 2px 0 $searchBtnBophonehadowInset;
+          box-shadow: 0 4px 8px 0 $searchBtnBoxShadow, inset 0 1px 2px 0 $searchBtnBoxShadowInset;
           transition: all .1s ease-in;
           height: 40px;
           padding: 0 18px;
@@ -33,7 +33,7 @@
           }
 
           &:active{
-            box-shadow: 0 0 0 0.2rem $searchBtnBophonehadow-active!important;
+            box-shadow: 0 0 0 0.2rem $searchBtnBoxShadow-active!important;
             border-color: $searchBtnBGC-hover!important;
           }
         }

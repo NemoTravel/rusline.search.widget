@@ -6287,7 +6287,7 @@
   font-family: Roboto, "Open Sans", sans-serif;
 }
 
-@media (max-width: 1100px) {
+@media (min-width: 1101px) {
   .widget .row {
     justify-content: space-between;
     width: 100%;
@@ -6329,13 +6329,13 @@
   flex-wrap: wrap;
 }
 
-@media (min-width: 1100px) {
+@media (max-width: 1100px) {
   .widget-form-search__wrapper {
     justify-content: space-around;
   }
 }
 
-@media (min-width: 1100px) {
+@media (max-width: 1100px) {
   .widget-form-search__wrapper .form-group {
     margin-bottom: 0;
   }
@@ -6353,25 +6353,25 @@
   }
 }
 
-@media (min-width: 1550px) {
+@media (min-width: 1551px) {
   .widget-form-airports__select .Select-input input {
     min-width: 250px;
   }
 }
 
-@media (min-width: 1100px) and (max-width: 1550px) {
+@media (min-width: 1101px) and (max-width: 1550px) {
   .widget-form-airports__select .Select-input input {
     max-width: 180px;
   }
 }
 
-@media (min-width: 1100px) {
+@media (max-width: 1100px) {
   .widget-form-dates__col.col {
     padding: 0 !important;
   }
 }
 
-@media (min-width: 768px) and (max-width: 1100px) {
+@media (min-width: 769px) and (max-width: 1100px) {
   .widget-form-dates__col.col:first-of-type {
     padding: 0 7.5px 0 15px !important;
   }
@@ -6387,7 +6387,7 @@
   }
 }
 
-@media (min-width: 1100px) and (max-width: 1550px) {
+@media (min-width: 1101px) and (max-width: 1550px) {
   .widget-form-dates .widget-ui-input {
     max-width: 155px;
   }
@@ -6401,7 +6401,7 @@
   border-radius: 2px;
 }
 
-@media (min-width: 1100px) and (max-width: 1550px) {
+@media (min-width: 1101px) and (max-width: 1550px) {
   .widget-ui-dropdown__trigger .form-control {
     max-width: 130px;
   }
