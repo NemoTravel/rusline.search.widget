@@ -6287,7 +6287,7 @@
   font-family: Roboto, "Open Sans", sans-serif;
 }
 
-@media (min-width: 1101px) {
+@media (max-width: 1100px) {
   .widget .row {
     justify-content: space-between;
     width: 100%;
@@ -6329,13 +6329,13 @@
   flex-wrap: wrap;
 }
 
-@media (max-width: 1100px) {
+@media (min-width: 1101px) {
   .widget-form-search__wrapper {
     justify-content: space-around;
   }
 }
 
-@media (max-width: 1100px) {
+@media (min-width: 1101px) {
   .widget-form-search__wrapper .form-group {
     margin-bottom: 0;
   }
@@ -6365,7 +6365,7 @@
   }
 }
 
-@media (max-width: 1100px) {
+@media (min-width: 1101px) {
   .widget-form-dates__col.col {
     padding: 0 !important;
   }

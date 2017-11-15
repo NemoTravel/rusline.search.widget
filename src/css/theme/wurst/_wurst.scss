@@ -2,7 +2,7 @@
   font-family: $fontTheme;
 
   .row{
-    @include responsive(min-desktop-middle) {
+    @include responsive(max-desktop-middle) {
       justify-content: space-between;
       width: 100%;
       margin-left: 0;
@@ -42,12 +42,12 @@
         display: flex;
         flex-wrap: wrap;
 
-        @include responsive(max-desktop-middle) {
+        @include responsive(min-desktop-middle) {
           justify-content: space-around;
         }
 
         .form-group{
-          @include responsive(max-desktop-middle) {
+          @include responsive(min-desktop-middle) {
             margin-bottom:0;
           }
         }
@@ -79,7 +79,7 @@
     }
     &-dates{
       &__col.col{
-        @include responsive(max-desktop-middle) {
+        @include responsive(min-desktop-middle) {
           padding: 0!important;
         }
 
