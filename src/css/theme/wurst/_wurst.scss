@@ -109,6 +109,35 @@
         }
       }
     }
+
+    &-passengers {
+      &__content {
+        left: auto;
+
+        @include adaptivity(phone) {
+          left: 0;
+        }
+      }
+
+      &__icon {
+        border: 1px solid;
+        position: relative;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        &:after {
+          width: auto;
+          height: auto;
+          position: static;
+          display: inline;
+        }
+      }
+
+      &__counter {
+        margin-left: 10px;
+      }
+    }
   }
 
   & &-ui-input_disabled {

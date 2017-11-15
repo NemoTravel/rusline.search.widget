@@ -6393,6 +6393,35 @@
   }
 }
 
+.widget-form-passengers__content {
+  left: auto;
+}
+
+@media only screen and (max-width: 650px) {
+  .widget-form-passengers__content {
+    left: 0;
+  }
+}
+
+.widget-form-passengers__icon {
+  border: 1px solid;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.widget-form-passengers__icon:after {
+  width: auto;
+  height: auto;
+  position: static;
+  display: inline;
+}
+
+.widget-form-passengers__counter {
+  margin-left: 10px;
+}
+
 .widget .widget-ui-input_disabled {
   border-color: rgba(255, 255, 255, 0.25) !important;
   background-color: rgba(255, 255, 255, 0.25) !important;
