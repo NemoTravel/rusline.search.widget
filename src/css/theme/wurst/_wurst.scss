@@ -133,20 +133,40 @@
     .react-datepicker {
       &__navigation {
         top: 5px;
-        color: #fff!important;
-        border-color: #fff;
+        color: $searchBtnColor!important;
+        border-color: $searchBtnColor;
         z-index: 1000;
+
+        @include adaptivity(phone) {
+          top: 10px;
+
+          &--previous {
+            left: 80px;
+          }
+
+          &--next {
+            right: 80px;
+          }
+        }
       }
 
       &__current-month {
-        background: #64b5f6;
+        background: $searchFormBGC;
         padding: 11px 0;
-        color: #fff;
+        color: $searchBtnColor;
+
+        @include adaptivity(phone) {
+          line-height: 28px;
+        }
       }
 
       &__month {
         border-left: 1px solid #e6e6e6;
         border-top: 1px solid #e6e6e6;
+
+        @include adaptivity(phone) {
+          border: none;
+        }
 
         &-container {
           padding: 0;
@@ -155,15 +175,29 @@
 
       &__week {
         margin-bottom:0;
+
+        @include adaptivity(phone) {
+          &:first-child {
+            .react-datepicker__day{
+              border-top: 1px solid #e6e6e6;
+            }
+          }
+        }
       }
 
       &__day {
         border-bottom: 1px solid #e6e6e6;
         border-right: 1px solid #e6e6e6;
 
+        @include adaptivity(phone) {
+          &:first-child {
+            border-left: 1px solid #e6e6e6;
+          }
+        }
+
         &-name:nth-child(6),
         &-name:nth-child(7) {
-          color: #64b5f6;
+          color: $searchFormBGC;
         }
 
         &--outside-month {
@@ -172,8 +206,8 @@
         }
 
         &--today {
-          border-color: #64b5f6;
-          color: #64b5f6!important;
+          border-color: $searchFormBGC;
+          color: $searchFormBGC!important;
           background: transparent!important;
 
           &:hover {
@@ -185,7 +219,11 @@
 
     &__header {
       padding-top: 8px;
-      color: #fff;
+      color: $searchBtnColor;
+
+      @include adaptivity(phone) {
+        padding-top: 0px;
+      }
 
       .widget-ui-mobile__title:before {
         margin-top:0;
@@ -216,6 +254,15 @@
           max-width: 130px;
         }
       }
+    }
+  }
+
+  & &-ui-mobile__back {
+    left: 0px;
+    top: 0px;
+
+    &:after {
+      left: 16px;
     }
   }
 }

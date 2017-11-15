@@ -6438,15 +6438,41 @@
   z-index: 1000;
 }
 
+@media only screen and (max-width: 650px) {
+  .widget .widget-ui-datepicker .react-datepicker__navigation {
+    top: 10px;
+  }
+
+  .widget .widget-ui-datepicker .react-datepicker__navigation--previous {
+    left: 80px;
+  }
+
+  .widget .widget-ui-datepicker .react-datepicker__navigation--next {
+    right: 80px;
+  }
+}
+
 .widget .widget-ui-datepicker .react-datepicker__current-month {
   background: #64b5f6;
   padding: 11px 0;
   color: #fff;
 }
 
+@media only screen and (max-width: 650px) {
+  .widget .widget-ui-datepicker .react-datepicker__current-month {
+    line-height: 28px;
+  }
+}
+
 .widget .widget-ui-datepicker .react-datepicker__month {
   border-left: 1px solid #e6e6e6;
   border-top: 1px solid #e6e6e6;
+}
+
+@media only screen and (max-width: 650px) {
+  .widget .widget-ui-datepicker .react-datepicker__month {
+    border: none;
+  }
 }
 
 .widget .widget-ui-datepicker .react-datepicker__month-container {
@@ -6457,9 +6483,21 @@
   margin-bottom: 0;
 }
 
+@media only screen and (max-width: 650px) {
+  .widget .widget-ui-datepicker .react-datepicker__week:first-child .react-datepicker__day {
+    border-top: 1px solid #e6e6e6;
+  }
+}
+
 .widget .widget-ui-datepicker .react-datepicker__day {
   border-bottom: 1px solid #e6e6e6;
   border-right: 1px solid #e6e6e6;
+}
+
+@media only screen and (max-width: 650px) {
+  .widget .widget-ui-datepicker .react-datepicker__day:first-child {
+    border-left: 1px solid #e6e6e6;
+  }
 }
 
 .widget .widget-ui-datepicker .react-datepicker__day-name:nth-child(6),
@@ -6487,6 +6525,12 @@
   color: #fff;
 }
 
+@media only screen and (max-width: 650px) {
+  .widget .widget-ui-datepicker__header {
+    padding-top: 0px;
+  }
+}
+
 .widget .widget-ui-datepicker__header .widget-ui-mobile__title:before {
   margin-top: 0;
 }
@@ -6512,4 +6556,13 @@
   .widget-ui-dropdown__trigger .form-control {
     max-width: 130px;
   }
+}
+
+.widget .widget-ui-mobile__back {
+  left: 0px;
+  top: 0px;
+}
+
+.widget .widget-ui-mobile__back:after {
+  left: 16px;
 }
