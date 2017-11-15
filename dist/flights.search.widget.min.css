@@ -6289,8 +6289,6 @@
 
 @media (max-width: 1100px) {
   .widget .row {
-    -webkit-box-pack: justify;
-    -ms-flex-pack: justify;
     justify-content: space-between;
     width: 100%;
     margin-left: 0;
@@ -6327,16 +6325,12 @@
 }
 
 .widget-form-search__wrapper {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -ms-flex-wrap: wrap;
   flex-wrap: wrap;
 }
 
 @media (min-width: 1100px) {
   .widget-form-search__wrapper {
-    -ms-flex-pack: distribute;
     justify-content: space-around;
   }
 }

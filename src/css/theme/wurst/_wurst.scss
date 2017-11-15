@@ -2,9 +2,7 @@
   font-family: $fontTheme;
 
   .row{
-    @include respond-to(max-md) {
-      -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
+    @include responsive(min-desktop-middle) {
       justify-content: space-between;
       width: 100%;
       margin-left: 0;
@@ -17,7 +15,7 @@
 
       &__startButton{
         &.btn-primary{
-          box-shadow: 0 4px 8px 0 $searchBtnBoxShadow, inset 0 1px 2px 0 $searchBtnBoxShadowInset;
+          box-shadow: 0 4px 8px 0 $searchBtnBophonehadow, inset 0 1px 2px 0 $searchBtnBophonehadowInset;
           transition: all .1s ease-in;
           height: 40px;
           padding: 0 18px;
@@ -33,32 +31,30 @@
             background: $searchBtnBGC-hover!important;
             color: $searchBtnColor;
           }
+
           &:active{
-            box-shadow: 0 0 0 0.2rem $searchBtnBoxShadow-active!important;
+            box-shadow: 0 0 0 0.2rem $searchBtnBophonehadow-active!important;
             border-color: $searchBtnBGC-hover!important;
           }
         }
       }
       &__wrapper{
-        display: -webkit-box;
-        display: -ms-flexbox;
         display: flex;
-        @include respond-to(min-md) {
-          -ms-flex-pack: distribute;
-          justify-content: space-around;
-        }
-        -ms-flex-wrap: wrap;
         flex-wrap: wrap;
 
+        @include responsive(max-desktop-middle) {
+          justify-content: space-around;
+        }
+
         .form-group{
-          @include respond-to(min-md) {
+          @include responsive(max-desktop-middle) {
             margin-bottom:0;
           }
         }
       }
       &__footer{
         .col{
-          @include respond-to(xs) {
+          @include responsive(phone) {
             padding: 0!important;
           }
         }
@@ -66,16 +62,16 @@
     }
     &-airports{
       &__col.col{
-        @include respond-to(xs) {
+        @include responsive(phone) {
           padding: 0!important;
         }
       }
       &__select{
         .Select-input input{
-          @include respond-to(xl) {
+          @include responsive(desktop-large) {
             min-width: 250px;
           }
-          @include respond-to(md) {
+          @include responsive(desktop-middle) {
             max-width: 180px;
           }
         }
@@ -83,23 +79,26 @@
     }
     &-dates{
       &__col.col{
-        @include respond-to(min-md) {
+        @include responsive(max-desktop-middle) {
           padding: 0!important;
         }
-        @include respond-to(sm) {
+
+        @include responsive(tablet) {
           &:first-of-type{
             padding: 0 7.5px 0 15px!important;
           }
+
           &:last-of-type{
             padding: 0 15px 0 7.5px!important;
           }
         }
-        @include respond-to(xs) {
+
+        @include responsive(phone) {
           padding: 0!important;
         }
       }
       .widget-ui-input{
-        @include respond-to(md) {
+        @include responsive(desktop-middle) {
           max-width: 155px;
         }
       }
@@ -113,7 +112,7 @@
       .form-control{
         border-radius: 2px;
 
-        @include respond-to(md) {
+        @include responsive(desktop-middle) {
           max-width: 130px;
         }
       }
