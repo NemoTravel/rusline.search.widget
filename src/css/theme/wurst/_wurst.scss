@@ -1,0 +1,297 @@
+& {
+  font-family: $fontTheme;
+
+  .row {
+    @include responsive(max-desktop-middle) {
+      justify-content: space-between;
+      width: 100%;
+      margin-left: 0;
+      margin-right: 0;
+    }
+  }
+  &-form {
+
+    &-search {
+      background-color: $searchFormBGC;
+
+      &__startButton {
+        &.btn-primary {
+          box-shadow: 0 4px 8px 0 $searchBtnBoxShadow, inset 0 1px 2px 0 $searchBtnBoxShadowInset;
+          transition: all .1s ease-in;
+          height: 40px;
+          padding: 0 18px;
+          border: none;
+          border-radius: 4px;
+          font-size: 18px;
+          color: $searchBtnColor;
+          line-height: 35px;
+          background: $searchBtnBGC;
+
+          &:hover,
+          &:active {
+            background: $searchBtnBGC-hover!important;
+            color: $searchBtnColor;
+          }
+
+          &:active {
+            box-shadow: 0 0 0 0.2rem $searchBtnBoxShadow-active!important;
+            border-color: $searchBtnBGC-hover!important;
+          }
+        }
+      }
+
+      &__wrapper {
+        display: flex;
+        flex-wrap: wrap;
+
+        @include responsive(min-desktop-middle) {
+          justify-content: space-around;
+        }
+
+        .form-group {
+          @include responsive(min-desktop-middle) {
+            margin-bottom:0;
+          }
+        }
+      }
+
+      &__footer {
+        .col {
+          @include responsive(phone) {
+            padding: 0!important;
+          }
+        }
+      }
+    }
+
+    &-airports {
+      &__col.col {
+        @include responsive(phone) {
+          padding: 0!important;
+        }
+      }
+
+      &__select {
+        .Select-input input {
+          @include responsive(desktop-large) {
+            min-width: 250px;
+          }
+          @include responsive(desktop-middle) {
+            max-width: 180px;
+          }
+        }
+      }
+    }
+
+    &-dates {
+      &__col.col {
+        @include responsive(min-desktop-middle) {
+          padding: 0!important;
+        }
+
+        @include responsive(tablet) {
+          &:first-of-type {
+            padding: 0 7.5px 0 15px!important;
+          }
+
+          &:last-of-type {
+            padding: 0 15px 0 7.5px!important;
+          }
+        }
+
+        @include responsive(phone) {
+          padding: 0!important;
+        }
+      }
+      .widget-ui-input {
+        @include responsive(desktop-middle) {
+          max-width: 155px;
+        }
+      }
+    }
+
+    &-passengers {
+      &__content {
+        left: auto;
+
+        @include adaptivity(phone) {
+          left: 0;
+        }
+      }
+
+      &__icon {
+        border: 1px solid;
+        position: relative;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        &:after {
+          width: auto;
+          height: auto;
+          position: static;
+          display: inline;
+        }
+      }
+
+      &__counter {
+        margin-left: 10px;
+      }
+    }
+  }
+
+  & &-ui-input_disabled {
+    border-color: $inputDisabled!important;
+    background-color: $inputDisabled!important;
+    text-align: center;
+    transition: all .1s ease-in!important;
+
+    @include placeholder(){ color: $searchBtnColor; }
+
+    &:hover{
+      background-color: $inputDisabled!important;
+      box-shadow: inset 0 0 16px $inputDisabled-hover;
+    }
+  }
+
+  & &-ui-datepicker{
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    padding-top: 0;
+    border: none;
+    
+    .react-datepicker {
+      &__navigation {
+        top: 5px;
+        color: $searchBtnColor!important;
+        border-color: $searchBtnColor;
+        z-index: 1000;
+
+        @include adaptivity(phone) {
+          top: 10px;
+
+          &--previous {
+            left: 80px;
+          }
+
+          &--next {
+            right: 80px;
+          }
+        }
+      }
+
+      &__current-month {
+        background: $searchFormBGC;
+        padding: 11px 0;
+        color: $searchBtnColor;
+
+        @include adaptivity(phone) {
+          line-height: 28px;
+        }
+      }
+
+      &__month {
+        border-left: 1px solid #e6e6e6;
+        border-top: 1px solid #e6e6e6;
+
+        @include adaptivity(phone) {
+          border: none;
+        }
+
+        &-container {
+          padding: 0;
+        }
+      }
+
+      &__week {
+        margin-bottom:0;
+
+        @include adaptivity(phone) {
+          &:first-child {
+            .react-datepicker__day{
+              border-top: 1px solid #e6e6e6;
+            }
+          }
+        }
+      }
+
+      &__day {
+        border-bottom: 1px solid #e6e6e6;
+        border-right: 1px solid #e6e6e6;
+
+        @include adaptivity(phone) {
+          &:first-child {
+            border-left: 1px solid #e6e6e6;
+          }
+        }
+
+        &-name:nth-child(6),
+        &-name:nth-child(7) {
+          color: $searchFormBGC;
+        }
+
+        &--outside-month {
+          opacity:1;
+          color: #ccc;
+        }
+
+        &--today {
+          border-color: $searchFormBGC;
+          color: $searchFormBGC!important;
+          background: transparent!important;
+
+          &:hover {
+            background: rgba(27, 117, 188, 0.2)!important;
+          }
+        }
+      }
+    }
+
+    &__header {
+      padding-top: 8px;
+      color: $searchBtnColor;
+
+      @include adaptivity(phone) {
+        padding-top: 0px;
+      }
+
+      .widget-ui-mobile__title:before {
+        margin-top:0;
+      }
+    }
+
+    &__footer {
+      bottom: 9px;
+    }
+
+    &_return {
+      padding-bottom: 50px;
+    }
+  }
+
+  & div[disabled] &-ui-datepicker {
+    &__calendar {
+      color: $searchBtnColor;
+    }
+  }
+
+  &-ui-dropdown {
+    &__trigger {
+      .form-control {
+        border-radius: 2px;
+
+        @include responsive(desktop-middle) {
+          max-width: 130px;
+        }
+      }
+    }
+  }
+
+  & &-ui-mobile__back {
+    left: 0px;
+    top: 0px;
+
+    &:after {
+      left: 16px;
+    }
+  }
+}

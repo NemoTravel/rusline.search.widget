@@ -1,0 +1,35 @@
+@mixin responsive($media) {
+
+  @if $media == desktop-large {
+    @media (min-width: $desktop + 1) { @content; }
+  }
+
+  @elseif $media == min-desktop-middle {
+    @media (min-width: $tablet + 1) { @content; }
+  }
+
+  @elseif $media == desktop-middle {
+    @media (min-width: $tablet + 1) and (max-width: $desktop) { @content; }
+  }
+
+  @elseif $media == max-desktop-middle {
+    @media (max-width: $tablet) { @content; }
+  }
+
+  @elseif $media == tablet {
+    @media (min-width: $phone + 1) and (max-width: $tablet) { @content; }
+  }
+
+  @elseif $media == phone {
+    @media only screen and (max-width: $phone) { @content; }
+  }
+
+}
+
+@mixin placeholder(){
+  &::-webkit-input-placeholder { @content; }
+  &:-moz-placeholder{ @content; }
+  &::-moz-placeholder{ @content; }
+  &:-ms-input-placeholder{ @content; }
+  &::-ms-input-placeholder{ @content; }
+}
