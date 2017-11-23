@@ -1,6 +1,6 @@
 & {
   font-family: $fontTheme;
-
+  background: none;
   .row {
     @include responsive(max-desktop-middle) {
       justify-content: space-between;
@@ -12,7 +12,7 @@
   &-form {
 
     &-search {
-      background-color: $searchFormBGC;
+      background-color: $searchFormBGC-rusline;
 
       &__startButton {
         &.btn-primary {
@@ -65,6 +65,13 @@
     }
 
     &-airports {
+      &__swap{
+        &:hover{
+          background: $searchFormBGC;
+          border-color: $searchFormBGC;
+        }
+      }
+
       &__col.col {
         @include responsive(phone) {
           padding: 0!important;
@@ -140,17 +147,23 @@
     }
   }
 
-  & &-ui-input_disabled {
-    border-color: $inputDisabled!important;
-    background-color: $inputDisabled!important;
-    text-align: center;
-    transition: all .1s ease-in!important;
+  & &-ui-input{
+    &__closer{
+      color: $searchFormBGC;
+    }
 
-    @include placeholder(){ color: $searchBtnColor; }
-
-    &:hover{
+    &_disabled {
+      border-color: $inputDisabled!important;
       background-color: $inputDisabled!important;
-      box-shadow: inset 0 0 16px $inputDisabled-hover;
+      text-align: center;
+      transition: all .1s ease-in!important;
+
+      @include placeholder(){ color: $searchBtnColor; }
+
+      &:hover{
+        background-color: $inputDisabled!important;
+        box-shadow: inset 0 0 16px $inputDisabled-hover;
+      }
     }
   }
 
@@ -165,6 +178,12 @@
         color: $searchBtnColor!important;
         border-color: $searchBtnColor;
         z-index: 1000;
+
+        &--previous:hover,
+        &--next:hover {
+          background-color: darken($searchFormBGC, 20%);
+          border-color: darken($searchFormBGC, 20%);
+        }
 
         @include adaptivity(phone) {
           top: 10px;
@@ -217,6 +236,7 @@
       &__day {
         border-bottom: 1px solid #e6e6e6;
         border-right: 1px solid #e6e6e6;
+        border-radius: 0;
 
         @include adaptivity(phone) {
           &:first-child {
@@ -252,6 +272,7 @@
 
       @include adaptivity(phone) {
         padding-top: 0px;
+        background: $searchFormBGC;;
       }
 
       .widget-ui-mobile__title:before {
@@ -261,6 +282,16 @@
 
     &__footer {
       bottom: 9px;
+
+      &__button{
+        background: transparent;
+        color: $searchFormBGC;
+        border-color: $searchFormBGC;
+        &:active,
+        &:hover{
+          background: $searchFormBGC;
+        }
+      }
     }
 
     &_return {
@@ -278,6 +309,7 @@
     &__trigger {
       .form-control {
         border-radius: 2px;
+        color: $searchBtnColor;
 
         @include responsive(desktop-middle) {
           max-width: 130px;

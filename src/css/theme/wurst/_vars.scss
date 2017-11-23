@@ -4,12 +4,14 @@ $desktop: 1550px;
 $tablet: 1100px;
 $phone: 768px;
 
-$searchFormBGC: #64b5f6;
+$searchFormBGC-rusline: rgba(0,0,0,0.6);
+$searchFormBGC: #ff1723;
 $searchBtnColor: #fff;
-$searchBtnBGC: #88c43d;
-$searchBtnBGC-hover: #94ca51;
-$searchBtnBoxShadow: rgba(93,134,41,.5);
-$searchBtnBoxShadow-active: rgba(93, 134, 41, 0.5);
-$searchBtnBoxShadowInset: #b8dc8b;
+$searchBtnBGC: $searchFormBGC;
+$searchBtnBGC-hover: lighten($searchBtnBGC, 10%);
+$searchBtnBoxShadow: rgba($searchBtnBGC, 0.5);
+$searchBtnBoxShadow-active: rgba($searchBtnBGC, 0.5);
+$searchBtnBoxShadowInset: darken($searchBtnBGC, 15%);
 $inputDisabled: rgba(255,255,255,.25);
 $inputDisabled-hover: rgba(255,255,255,.2);
+
