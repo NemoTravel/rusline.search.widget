@@ -7164,7 +7164,13 @@
 
 @media (min-width: 1101px) and (max-width: 1550px) {
   .widget .Select {
-    min-width: 220px;
+    min-width: 275px;
+  }
+}
+
+@media (min-width: 1551px) {
+  .widget .Select {
+    min-width: 373px;
   }
 }
 
@@ -7173,8 +7179,14 @@
 }
 
 @media (min-width: 1101px) and (max-width: 1550px) {
+  .widget .react-datepicker__input-container {
+    max-width: 150px;
+  }
+}
+
+@media (min-width: 1101px) and (max-width: 1550px) {
   .widget-form {
-    max-width: 1230px;
+    max-width: 1190px;
     margin: 0 auto;
   }
 }

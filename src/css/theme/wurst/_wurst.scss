@@ -13,7 +13,11 @@
 
   .Select{
     @include responsive(desktop-middle){
-      min-width: 220px;
+      min-width: 275px;
+    }
+
+    @include responsive(desktop-large){
+      min-width: 373px;
     }
 
     &-arrow-zone{
@@ -21,9 +25,15 @@
     }
   }
 
+  .react-datepicker__input-container{
+    @include responsive(desktop-middle){
+      max-width: 150px;
+    }
+  }
+
   &-form {
     @include responsive (desktop-middle) {
-      max-width: 1230px;
+      max-width: 1190px;
       margin: 0 auto;
     }
     @include responsive (desktop-large) {
