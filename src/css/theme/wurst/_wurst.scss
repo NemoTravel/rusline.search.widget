@@ -11,17 +11,23 @@
     }
   }
 
-  .Select-arrow-zone{
-    padding-right: 75px;
+  .Select{
+    @include responsive(desktop-middle){
+      min-width: 220px;
+    }
+
+    &-arrow-zone{
+      display: none;
+    }
   }
 
   &-form {
-    @include responsive(desktop-middle){
+    @include responsive (desktop-middle) {
       max-width: 1230px;
       margin: 0 auto;
     }
-    @include responsive(desktop-large){
-      max-width: 1550px;
+    @include responsive (desktop-large) {
+      max-width: 1580px;
       margin: 0 auto;
     }
 
@@ -60,7 +66,7 @@
         flex-wrap: wrap;
 
         @include responsive(min-desktop-middle) {
-          justify-content: space-around;
+          justify-content: space-between;
         }
 
         .form-group {
@@ -82,7 +88,6 @@
     &-airports {
       &__swap {
         border-radius: 0;
-        border: 0;
         width: 40px;
         height: 39px;
         display: flex;
@@ -99,7 +104,8 @@
         }
 
         @include adaptivity (not-phone) {
-          left: -40px;
+          left: -57px;
+          border: 0;
         }
 
         @include responsive (tablet) {
@@ -126,7 +132,7 @@
         }
 
         &:hover{
-          background: transparent;
+          background: #fff;
 
           &:before{
             margin-left: 5px;
@@ -138,28 +144,38 @@
       }
 
       &__col.col {
-        &:first-of-type{
-          @include adaptivity(not-phone){
-            .widget-ui-input__arrow{
+        &:first-of-type {
+          .widget-form-airports__airportCode_withArrow {
+            display: none;
+          }
+
+          @include adaptivity (not-phone) {
+            .widget-ui-input__arrow {
               right: 35px;
             }
 
-            .widget-form-airports__airportCode_withArrow{
+            .widget-form-airports__airportCode_withArrow {
               right: 67px;
             }
           }
         }
 
-        &:last-of-type{
-          padding-left:15px;
+        @include responsive (phone) {
+          padding: 0!important;
         }
 
-        @include responsive(phone) {
-          padding: 0!important;
+        @include adaptivity (not-phone){
+          &:last-of-type {
+            padding-left:15px;
+          }
         }
       }
 
       &__select {
+        .Select-control {
+          border-radius: 2px;
+        }
+
         .Select-input input {
           @include responsive(desktop-large) {
             min-width: 250px;
@@ -177,6 +193,10 @@
           padding: 0!important;
         }
 
+        &:last-of-type{
+          padding-left: 15px!important;
+        }
+
         @include responsive(tablet) {
           &:first-of-type {
             padding: 0 7.5px 0 15px!important;
@@ -192,6 +212,7 @@
         }
       }
       .widget-ui-input {
+        border-radius: 2px;
         @include responsive(desktop-middle) {
           max-width: 155px;
         }
@@ -211,8 +232,23 @@
         border: 1px solid;
         position: relative;
         display: flex;
+        color: $searchFormBGC;
         justify-content: center;
         align-items: center;
+
+        &:hover{
+          background-color: $searchFormBGC;
+          border-color: $searchFormBGC;
+        }
+
+        &_disabled{
+          color: #F2F2F2;
+
+          &:hover{
+            background-color: transparent;
+            border-color: #F2F2F2;
+          }
+        }
 
         &:after {
           width: auto;
@@ -220,6 +256,8 @@
           position: static;
           display: inline;
         }
+
+
       }
 
       &__counter {
@@ -229,20 +267,28 @@
   }
 
   & &-ui-input{
+    &__arrow{
+      &:after{
+        content: "";
+        width: 12px;
+        height: 9px;
+        background: $arrow-down;
+        background-repeat: no-repeat;
+      }
+    }
+
     &__closer{
       color: $searchFormBGC;
     }
 
     &_disabled {
-      border-color: $inputDisabled!important;
-      background-color: $inputDisabled!important;
-      text-align: center;
+      border-color: #ccc!important;
+      background-color: $searchBtnColor!important;
       transition: all .1s ease-in!important;
 
-      @include placeholder(){ color: $searchBtnColor; }
 
       &:hover{
-        background-color: $inputDisabled!important;
+        background-color: $searchBtnColor!important;
         box-shadow: inset 0 0 16px $inputDisabled-hover;
       }
     }
@@ -399,7 +445,7 @@
     &__trigger {
       .form-control {
         border-radius: 2px;
-        color: $searchBtnColor;
+        background-color: $searchBtnColor;
 
         @include responsive(min-desktop-middle) {
           min-width: 140px;
