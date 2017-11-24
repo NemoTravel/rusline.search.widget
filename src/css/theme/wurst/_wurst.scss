@@ -109,8 +109,12 @@
 
         @include adaptivity (phone) {
           left: unset;
-          right: 80px;
-          top: -22px;
+          right: 0px;
+          top: -39px;
+          border: 0;
+          border-left: 1px solid;
+          border-right: 1px solid;
+          height: 38px;
         }
 
         @include adaptivity (not-phone) {
@@ -464,12 +468,18 @@
     }
   }
 
-  & &-ui-mobile__back {
-    left: 0px;
-    top: 0px;
+  & &-ui-mobile{
+    &__header{
+      background-color: $searchFormBGC;
+    }
 
-    &:after {
-      left: 16px;
+    &__back {
+      left: 0px;
+      top: 0px;
+
+      &:after {
+        left: 16px;
+      }
     }
   }
 }

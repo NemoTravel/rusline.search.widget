@@ -7281,8 +7281,12 @@
 @media only screen and (max-width: 650px) {
   .widget-form-airports__swap {
     left: unset;
-    right: 80px;
-    top: -22px;
+    right: 0px;
+    top: -39px;
+    border: 0;
+    border-left: 1px solid;
+    border-right: 1px solid;
+    height: 38px;
   }
 }
 
@@ -7649,6 +7653,11 @@
   .widget-ui-dropdown__trigger .form-control {
     min-width: 140px;
   }
+}
+
+.widget .widget-ui-mobile__header,
+.widget .widget-ui-datepicker__header {
+  background-color: #ff1723;
 }
 
 .widget .widget-ui-mobile__back {
