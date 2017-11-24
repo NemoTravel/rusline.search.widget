@@ -1,6 +1,7 @@
 & {
   font-family: $fontTheme;
   background: none;
+
   .row {
     @include responsive(max-desktop-middle) {
       justify-content: space-between;
@@ -9,7 +10,20 @@
       margin-right: 0;
     }
   }
+
+  .Select-arrow-zone{
+    padding-right: 75px;
+  }
+
   &-form {
+    @include responsive(desktop-middle){
+      max-width: 1230px;
+      margin: 0 auto;
+    }
+    @include responsive(desktop-large){
+      max-width: 1550px;
+      margin: 0 auto;
+    }
 
     &-search {
       background-color: $searchFormBGC-rusline;
@@ -26,6 +40,7 @@
           color: $searchBtnColor;
           line-height: 35px;
           background: $searchBtnBGC;
+          font-weight:normal;
 
           &:hover,
           &:active {
@@ -65,14 +80,80 @@
     }
 
     &-airports {
-      &__swap{
+      &__swap {
+        border-radius: 0;
+        border: 0;
+        width: 40px;
+        height: 39px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        font-size: 26px;
+        line-height: 0.4!important;
+        transition: all .1s ease-in;
+
+        @include adaptivity (phone) {
+          left: unset;
+          right: 80px;
+          top: -22px;
+        }
+
+        @include adaptivity (not-phone) {
+          left: -40px;
+        }
+
+        @include responsive (tablet) {
+          left: -55px;
+        }
+
+        @include responsive (min-desktop-middle) {
+          left: -55px;
+        }
+
+        &:before,
+        &:after{
+          content: "";
+          width: 17px;
+          height: 7px;
+        }
+
+        &:before{
+          background: $arrow;
+        }
+        &:after{
+          background: $arrow;
+          transform: rotate(180deg) translateX(1px);
+        }
+
         &:hover{
-          background: $searchFormBGC;
-          border-color: $searchFormBGC;
+          background: transparent;
+
+          &:before{
+            margin-left: 5px;
+          }
+          &:after{
+            margin-right: 5px;
+          }
         }
       }
 
       &__col.col {
+        &:first-of-type{
+          @include adaptivity(not-phone){
+            .widget-ui-input__arrow{
+              right: 35px;
+            }
+
+            .widget-form-airports__airportCode_withArrow{
+              right: 67px;
+            }
+          }
+        }
+
+        &:last-of-type{
+          padding-left:15px;
+        }
+
         @include responsive(phone) {
           padding: 0!important;
         }
@@ -266,6 +347,15 @@
       }
     }
 
+    &__calendar {
+      &:after{
+        content: "";
+        background: $calendar;
+        width: 28px;
+        height: 21px;
+      }
+    }
+
     &__header {
       padding-top: 8px;
       color: $searchBtnColor;
@@ -311,8 +401,8 @@
         border-radius: 2px;
         color: $searchBtnColor;
 
-        @include responsive(desktop-middle) {
-          max-width: 130px;
+        @include responsive(min-desktop-middle) {
+          min-width: 140px;
         }
       }
     }

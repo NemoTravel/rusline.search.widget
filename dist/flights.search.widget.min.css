@@ -7162,6 +7162,24 @@
   }
 }
 
+.widget .Select-arrow-zone {
+  padding-right: 75px;
+}
+
+@media (min-width: 1101px) and (max-width: 1550px) {
+  .widget-form {
+    max-width: 1230px;
+    margin: 0 auto;
+  }
+}
+
+@media (min-width: 1551px) {
+  .widget-form {
+    max-width: 1550px;
+    margin: 0 auto;
+  }
+}
+
 .widget-form-search {
   background-color: rgba(0, 0, 0, 0.6);
 }
@@ -7179,6 +7197,7 @@
   color: #fff;
   line-height: 35px;
   background: #ff1723;
+  font-weight: normal;
 }
 
 .widget-form-search__startButton.btn-primary:hover,
@@ -7220,9 +7239,94 @@
   }
 }
 
+.widget-form-airports__swap {
+  border-radius: 0;
+  border: 0;
+  width: 40px;
+  height: 39px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  font-size: 26px;
+  line-height: 0.4 !important;
+  -webkit-transition: all .1s ease-in;
+  transition: all .1s ease-in;
+}
+
+@media only screen and (max-width: 650px) {
+  .widget-form-airports__swap {
+    left: unset;
+    right: 80px;
+    top: -22px;
+  }
+}
+
+@media only screen and (min-width: 651px) {
+  .widget-form-airports__swap {
+    left: -40px;
+  }
+}
+
+@media (min-width: 769px) and (max-width: 1100px) {
+  .widget-form-airports__swap {
+    left: -55px;
+  }
+}
+
+@media (min-width: 1101px) {
+  .widget-form-airports__swap {
+    left: -55px;
+  }
+}
+
+.widget-form-airports__swap:before,
+.widget-form-airports__swap:after {
+  content: "";
+  width: 17px;
+  height: 7px;
+}
+
+.widget-form-airports__swap:before {
+  background: url("data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4KPHN2ZyB2ZXJzaW9uPSIxLjEiIGlkPSJMYXllcl8xIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rIiB4PSIwcHgiIHk9IjBweCIKCSB3aWR0aD0iMTdweCIgaGVpZ2h0PSI3cHgiIHZpZXdCb3g9IjAgMCAxNyA3IiBzdHlsZT0iZW5hYmxlLWJhY2tncm91bmQ6bmV3IDAgMCAxNyA2LjU4OyIgeG1sOnNwYWNlPSJwcmVzZXJ2ZSI+CjxzdHlsZSB0eXBlPSJ0ZXh0L2NzcyI+Cgkuc3Qwe2ZpbGw6I2ZmMTcyMzt9Cjwvc3R5bGU+Cjxwb2x5Z29uIGNsYXNzPSJzdDAiIHBvaW50cz0iMTcsMy4yOSAxMS4zLDAgMTEuMywyLjI5IDAsMi4yOSAwLDQuMjkgMTEuMyw0LjI5IDExLjMsNi41OCAiLz4KPC9zdmc+Cg==");
+}
+
+.widget-form-airports__swap:after {
+  background: url("data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4KPHN2ZyB2ZXJzaW9uPSIxLjEiIGlkPSJMYXllcl8xIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rIiB4PSIwcHgiIHk9IjBweCIKCSB3aWR0aD0iMTdweCIgaGVpZ2h0PSI3cHgiIHZpZXdCb3g9IjAgMCAxNyA3IiBzdHlsZT0iZW5hYmxlLWJhY2tncm91bmQ6bmV3IDAgMCAxNyA2LjU4OyIgeG1sOnNwYWNlPSJwcmVzZXJ2ZSI+CjxzdHlsZSB0eXBlPSJ0ZXh0L2NzcyI+Cgkuc3Qwe2ZpbGw6I2ZmMTcyMzt9Cjwvc3R5bGU+Cjxwb2x5Z29uIGNsYXNzPSJzdDAiIHBvaW50cz0iMTcsMy4yOSAxMS4zLDAgMTEuMywyLjI5IDAsMi4yOSAwLDQuMjkgMTEuMyw0LjI5IDExLjMsNi41OCAiLz4KPC9zdmc+Cg==");
+  -webkit-transform: rotate(180deg) translateX(1px);
+  transform: rotate(180deg) translateX(1px);
+}
+
 .widget-form-airports__swap:hover {
-  background: #ff1723;
-  border-color: #ff1723;
+  background: transparent;
+}
+
+.widget-form-airports__swap:hover:before {
+  margin-left: 5px;
+}
+
+.widget-form-airports__swap:hover:after {
+  margin-right: 5px;
+}
+
+@media only screen and (min-width: 651px) {
+  .widget-form-airports__col.col:first-of-type .widget-ui-input__arrow {
+    right: 35px;
+  }
+
+  .widget-form-airports__col.col:first-of-type .widget-form-airports__airportCode_withArrow {
+    right: 67px;
+  }
+}
+
+.widget-form-airports__col.col:last-of-type {
+  padding-left: 15px;
 }
 
 @media only screen and (max-width: 768px) {
@@ -7447,6 +7551,13 @@
   background: rgba(27, 117, 188, 0.2) !important;
 }
 
+.widget .widget-ui-datepicker__calendar:after {
+  content: "";
+  background: #fff url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABwAAAAVCAYAAABVAo5cAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAABAhpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuMy1jMDExIDY2LjE0NTY2MSwgMjAxMi8wMi8wNi0xNDo1NjoyNyAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wTU09Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9tbS8iIHhtbG5zOnN0UmVmPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvc1R5cGUvUmVzb3VyY2VSZWYjIiB4bWxuczp4bXA9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC8iIHhtbG5zOmRjPSJodHRwOi8vcHVybC5vcmcvZGMvZWxlbWVudHMvMS4xLyIgeG1wTU06T3JpZ2luYWxEb2N1bWVudElEPSJ1dWlkOjY1RTYzOTA2ODZDRjExREJBNkUyRDg4N0NFQUNCNDA3IiB4bXBNTTpEb2N1bWVudElEPSJ4bXAuZGlkOkU0QzI1NzE5MDY1QjExRTZBN0Q1ODU4RUYyQTM3NDk4IiB4bXBNTTpJbnN0YW5jZUlEPSJ4bXAuaWlkOkU0QzI1NzE4MDY1QjExRTZBN0Q1ODU4RUYyQTM3NDk4IiB4bXA6Q3JlYXRvclRvb2w9IkFkb2JlIElsbHVzdHJhdG9yIENDIDIwMTUgKE1hY2ludG9zaCkiPiA8eG1wTU06RGVyaXZlZEZyb20gc3RSZWY6aW5zdGFuY2VJRD0idXVpZDo1Njg5ZmE1NC0wYmMwLTgxNDMtOTRlOC01NTE5ODMwNDBmYzQiIHN0UmVmOmRvY3VtZW50SUQ9InhtcC5kaWQ6MTVjOWIzNmItZDM1Yy00YzE4LWJlMGQtOGU0YjUzYmEzZTI5Ii8+IDxkYzp0aXRsZT4gPHJkZjpBbHQ+IDxyZGY6bGkgeG1sOmxhbmc9IngtZGVmYXVsdCI+UnVzTGluZSAtLSDQv9C+0LjRgdC6IDEuMTwvcmRmOmxpPiA8L3JkZjpBbHQ+IDwvZGM6dGl0bGU+IDwvcmRmOkRlc2NyaXB0aW9uPiA8L3JkZjpSREY+IDwveDp4bXBtZXRhPiA8P3hwYWNrZXQgZW5kPSJyIj8+HcT9tgAAAYhJREFUeNrUlb9KA0EQxvfieVG5IJGAiKhYBCv1Ci38g2BloWAhViLWYi0WCla+ha2d4lv4Aj6AoNjYWBgSDjHntzAHwzCb9XKC+MGPZD/2bnZ39maM0TUAxoU3CBqKN6q9IMsyFakAhGAanNH/nCY4Ed48OAQRLdIbMGBzVsCOKacncAM62m64NsExiGmXE7TDgDFDc7g3Bw5ot3aHy+DSjnsdqZ14BariaGOxqAoYUXJdFd4uWHIFzF/SASlPAWiJF3VBW3hf4jmrRzDpOsqQflOx6pCN0wJevojIF5BrEeyxsc3JKthi3gVYE975T25VxfyBauBUfMw1RhHP0G3ed10a7UiHwBgb28szDOrM+3B4XmkBm0oOEyWHyb/NYVkVzuGsrRRsfEfHvMC8WyoOhaUFrFN+ct1Tq0pEQFMmIA/8Bh5ESXsRnu9edHtNiKh4/9YF2gDrvgZsm+g2dYkyatDiY18DtoX4CEyB1z6DxVQwrsGzqwEHykNxnwE/wXueP1fAbwEGABm7zbfJO561AAAAAElFTkSuQmCC") center center no-repeat;
+  width: 28px;
+  height: 21px;
+}
+
 .widget .widget-ui-datepicker__header {
   padding-top: 8px;
   color: #fff;
@@ -7495,9 +7606,9 @@
   color: #fff;
 }
 
-@media (min-width: 1101px) and (max-width: 1550px) {
+@media (min-width: 1101px) {
   .widget-ui-dropdown__trigger .form-control {
-    max-width: 130px;
+    min-width: 140px;
   }
 }
 
