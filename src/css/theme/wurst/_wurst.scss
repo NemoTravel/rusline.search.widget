@@ -33,7 +33,7 @@
 
   &-form {
     @include responsive (desktop-middle) {
-      max-width: 1190px;
+      max-width: 1100px;
       margin: 0 auto;
     }
     @include responsive (desktop-large) {
