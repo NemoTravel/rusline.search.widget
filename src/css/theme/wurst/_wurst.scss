@@ -13,7 +13,7 @@
 
   .Select{
     @include responsive(desktop-middle){
-      min-width: 275px;
+      min-width: 230px;
     }
 
     @include responsive(desktop-large){
@@ -88,6 +88,12 @@
 
       &__footer {
         .col {
+          &:first-of-type{
+            @media (min-width: 650px) and (max-width: 768px){
+              padding-right: 15px!important;
+            }
+          }
+
           @include responsive(phone) {
             padding: 0!important;
           }
@@ -110,7 +116,7 @@
         @include adaptivity (phone) {
           left: unset;
           right: 0px;
-          top: -39px;
+          top: -55px;
           border: 0;
           border-left: 1px solid;
           border-right: 1px solid;
@@ -159,6 +165,14 @@
 
       &__col.col {
         &:first-of-type {
+          @media (min-width: 650px) and (max-width: 768px){
+            padding-right: 15px!important;
+          }
+
+          @include adaptivity (phone){
+            margin-bottom:1rem;
+          }
+
           .widget-form-airports__airportCode_withArrow {
             display: none;
           }
