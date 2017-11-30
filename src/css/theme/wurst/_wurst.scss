@@ -16,21 +16,18 @@
     @include responsive(min-desktop-middle){
       width: 275px;
     }
+    @include responsive(desktop-middle){
+      width: 215px;
+    }
 
     &-arrow-zone{
       display: none;
     }
   }
 
-  .react-datepicker__input-container {
-    @include responsive (desktop-middle) {
-      max-width: 150px;
-    }
-  }
-
   &-form {
     @include responsive (min-desktop-middle) {
-      max-width: 1201px;
+      max-width: 1221px;
       margin: 0 auto;
     }
 
@@ -172,7 +169,7 @@
       &__col.col {
         &:first-of-type {
           @media (min-width: 650px) and (max-width: 768px){
-            padding-right: 15px!important;
+            padding-right: 10px!important;
           }
 
           @include adaptivity (phone){
@@ -374,6 +371,7 @@
         content: "";
         width: 12px;
         height: 9px;
+        margin-top: 4px;
         background: $arrow-down;
         background-repeat: no-repeat;
       }
@@ -492,6 +490,11 @@
             background: rgba(27, 117, 188, 0.2)!important;
           }
         }
+
+        &--selected {
+          color: $searchFormBGC!important;
+          background: rgba(255, 23, 35, 0.2) !important;
+        }
       }
     }
 
@@ -568,7 +571,7 @@
           background-color: $searchBtnColor;
 
           @include responsive(min-desktop-middle) {
-            min-width: 140px;
+            min-width: 160px;
             height: 45px;
             line-height: 45px!important;
             padding-left: 10px!important;
