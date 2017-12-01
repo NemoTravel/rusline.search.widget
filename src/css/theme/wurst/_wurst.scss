@@ -398,18 +398,35 @@
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
     padding-top: 0;
     border: none;
-    
+
+    &__specialDay{
+      color: #fff !important;
+      background: #808285 !important;
+      position: relative;
+
+      &:after {
+        content: "";
+        border-top: 5px solid transparent;
+        border-right: 7px solid #fff;
+        border-bottom: 5px solid transparent;
+        position: absolute;
+        right: 0;
+        top: 50%;
+        margin-top: -5px;
+      }
+    }
+
     .react-datepicker {
       &__navigation {
-        top: 5px;
-        color: $searchBtnColor!important;
-        border-color: $searchBtnColor;
+        top: 40px;
+        width: 25px;
+        height: 25px;
         z-index: 1000;
 
         &--previous:hover,
         &--next:hover {
-          background-color: darken($searchFormBGC, 20%);
-          border-color: darken($searchFormBGC, 20%);
+          background-color: #737373;
+          border-color: #737373;
         }
 
         @include adaptivity(phone) {
@@ -426,9 +443,8 @@
       }
 
       &__current-month {
-        background: $searchFormBGC;
-        padding: 11px 0;
-        color: $searchBtnColor;
+        background: #fff;
+        padding: 43px 0 5px;
 
         @include adaptivity(phone) {
           line-height: 28px;
@@ -436,9 +452,6 @@
       }
 
       &__month {
-        border-left: 1px solid #e6e6e6;
-        border-top: 1px solid #e6e6e6;
-
         @include adaptivity(phone) {
           border: none;
         }
@@ -461,39 +474,66 @@
       }
 
       &__day {
-        border-bottom: 1px solid #e6e6e6;
-        border-right: 1px solid #e6e6e6;
+        border: 1px solid #fff;
+        background: #F2F2F2;
         border-radius: 0;
 
-        @include adaptivity(phone) {
+        &:hover {
+          color: #fff !important;
+          background: #808285 !important;
+        }
+
+        @include adaptivity (phone) {
           &:first-child {
             border-left: 1px solid #e6e6e6;
           }
         }
 
-        &-name:nth-child(6),
-        &-name:nth-child(7) {
-          color: $searchFormBGC;
+        &-name {
+          text-decoration: underline;
         }
 
         &--outside-month {
-          opacity:1;
+          opacity:0;
           color: #ccc;
         }
 
         &--today {
-          border-color: $searchFormBGC;
-          color: $searchFormBGC!important;
-          background: transparent!important;
+          border: 1px solid #fff;
+          background: #F2F2F2;
+          font-weight: bold;
+          color: #666666;
 
           &:hover {
-            background: rgba(27, 117, 188, 0.2)!important;
+            color: #fff !important;
+            background: #808285 !important;
           }
         }
 
         &--selected {
-          color: $searchFormBGC!important;
-          background: rgba(255, 23, 35, 0.2) !important;
+          color: #fff !important;
+          background: #808285 !important;
+          position: relative;
+
+          &:before {
+            content: "";
+            border-top: 5px solid transparent;
+            border-left: 7px solid #fff;
+            border-bottom: 5px solid transparent;
+            position: absolute;
+            left: 0;
+            top: 50%;
+            margin-top: -5px;
+          }
+
+          &:after {
+            display: none;
+          }
+        }
+
+        &--highlighted {
+          background: rgba(128, 130, 133, 0.2);
+          color: #666666;
         }
       }
     }
@@ -536,8 +576,44 @@
       }
     }
 
+    &_departure {
+      .react-datepicker__day {
+        position: relative;
+
+        &:hover {
+          &:before {
+            content: "";
+            border-top: 5px solid transparent;
+            border-left: 7px solid #fff;
+            border-bottom: 5px solid transparent;
+            position: absolute;
+            left: 0;
+            top: 50%;
+            margin-top: -5px;
+          }
+        }
+      }
+    }
+
     &_return {
       padding-bottom: 50px;
+
+      .react-datepicker__day {
+        position: relative;
+
+        &:hover {
+          &:after {
+            content: "";
+            border-top: 5px solid transparent;
+            border-right: 7px solid #fff;
+            border-bottom: 5px solid transparent;
+            position: absolute;
+            right: 0;
+            top: 50%;
+            margin-top: -5px;
+          }
+        }
+      }
     }
   }
 
@@ -583,7 +659,8 @@
 
   & &-ui-mobile {
     &__header {
-      background-color: $searchFormBGC;
+      background-color: #fff;
+      color: #737373;
     }
 
     &__back {
