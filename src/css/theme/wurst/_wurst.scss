@@ -6,27 +6,28 @@
     margin-left: 0;
     margin-right: 0;
 
-    @include responsive(max-desktop-middle) {
+    @include adaptivity (max-desktop-middle) {
       justify-content: space-between;
       width: 100%;
     }
   }
 
-  .Select{
-    @include responsive(min-desktop-middle){
+  .Select {
+    @include adaptivity (min-desktop-middle) {
       width: 275px;
     }
-    @include responsive(desktop-middle){
+
+    @include adaptivity (desktop-middle) {
       width: 215px;
     }
 
-    &-arrow-zone{
+    &-arrow-zone {
       display: none;
     }
   }
 
   &-form {
-    @include responsive (min-desktop-middle) {
+    @include adaptivity (min-desktop-middle) {
       max-width: 1221px;
       margin: 0 auto;
     }
@@ -65,12 +66,12 @@
         display: flex;
         flex-wrap: wrap;
 
-        @include responsive(min-desktop-middle) {
+        @include adaptivity(min-desktop-middle) {
           justify-content: space-between;
         }
 
         .form-group {
-          @include responsive(min-desktop-middle) {
+          @include adaptivity(min-desktop-middle) {
             margin-bottom:0;
           }
         }
@@ -79,7 +80,7 @@
       &__footer {
         .col {
           &:first-of-type {
-            @include responsive (min-desktop-middle) {
+            @include adaptivity (min-desktop-middle) {
               padding-left: 10px;
               padding-right: 0px;
             }
@@ -90,13 +91,13 @@
           }
 
           &:last-of-type {
-            @include responsive (min-desktop-middle) {
+            @include adaptivity (min-desktop-middle) {
               padding-left: 10px;
               padding-right: 0px;
             }
           }
 
-          @include responsive(phone) {
+          @include adaptivity(phone) {
             padding: 0!important;
           }
         }
@@ -128,11 +129,11 @@
           border: 0;
         }
 
-        @include responsive (tablet) {
+        @include adaptivity (tablet) {
           left: -55px;
         }
 
-        @include responsive (min-desktop-middle) {
+        @include adaptivity (min-desktop-middle) {
           left: -55px;
         }
 
@@ -176,7 +177,7 @@
             margin-bottom:1rem;
           }
 
-          @include responsive (min-desktop-middle) {
+          @include adaptivity (min-desktop-middle) {
             padding-left:0;
           }
 
@@ -200,7 +201,7 @@
             padding-left:15px;
           }
 
-          @include responsive (min-desktop-middle) {
+          @include adaptivity (min-desktop-middle) {
             padding-left: 10px;
             padding-right: 10px;
           }
@@ -221,7 +222,7 @@
           }
         }
 
-        @include responsive (phone) {
+        @include adaptivity (phone) {
           padding: 0!important;
         }
       }
@@ -248,11 +249,11 @@
               height: 42px;
               line-height: 42px;
 
-              @include responsive(desktop-large) {
+              @include adaptivity(desktop-large) {
                 min-width: 250px;
               }
 
-              @include responsive(desktop-middle) {
+              @include adaptivity(desktop-middle) {
                 max-width: 180px;
               }
             }
@@ -262,7 +263,7 @@
         &__value {
           padding-left: 10px;
 
-          &__placeholder{
+          &__placeholder {
             padding-left: 10px!important;
           }
 
@@ -283,7 +284,7 @@
 
     &-dates {
       &__col.col {
-        @include responsive(min-desktop-middle) {
+        @include adaptivity (min-desktop-middle) {
           padding: 0!important;
         }
 
@@ -291,7 +292,7 @@
           padding-left: 10px!important;
         }
 
-        @include responsive(tablet) {
+        @include adaptivity (tablet) {
           &:first-of-type {
             padding: 0 7.5px 0 15px!important;
           }
@@ -301,13 +302,13 @@
           }
         }
 
-        @include responsive(phone) {
+        @include adaptivity (phone) {
           padding: 0!important;
         }
       }
       .widget-ui-input {
         border-radius: 2px;
-        @include responsive(min-desktop-middle) {
+        @include adaptivity (min-desktop-middle) {
           width: 175px;
         }
       }
@@ -317,7 +318,7 @@
       &__content {
         left: auto;
 
-        @include adaptivity(phone) {
+        @include adaptivity (phone) {
           left: 0;
         }
       }
@@ -330,15 +331,15 @@
         justify-content: center;
         align-items: center;
 
-        &:hover{
+        &:hover {
           background-color: $searchFormBGC;
           border-color: $searchFormBGC;
         }
 
-        &_disabled{
+        &_disabled {
           color: #F2F2F2;
 
-          &:hover{
+          &:hover {
             background-color: transparent;
             border-color: #F2F2F2;
           }
@@ -399,7 +400,7 @@
     padding-top: 0;
     border: none;
 
-    &__specialDay{
+    &__specialDay {
       color: #fff !important;
       background: #808285 !important;
       position: relative;
@@ -429,7 +430,7 @@
           border-color: #737373;
         }
 
-        @include adaptivity(phone) {
+        @include adaptivity (phone) {
           top: 10px;
 
           &--previous {
@@ -446,13 +447,13 @@
         background: #fff;
         padding: 43px 0 5px;
 
-        @include adaptivity(phone) {
+        @include adaptivity (phone) {
           line-height: 28px;
         }
       }
 
       &__month {
-        @include adaptivity(phone) {
+        @include adaptivity (phone) {
           border: none;
         }
 
@@ -464,9 +465,9 @@
       &__week {
         margin-bottom:0;
 
-        @include adaptivity(phone) {
+        @include adaptivity (phone) {
           &:first-child {
-            .react-datepicker__day{
+            .react-datepicker__day {
               border-top: 1px solid #e6e6e6;
             }
           }
@@ -646,7 +647,7 @@
           border-radius: 2px;
           background-color: $searchBtnColor;
 
-          @include responsive(min-desktop-middle) {
+          @include adaptivity(min-desktop-middle) {
             min-width: 160px;
             height: 45px;
             line-height: 45px!important;
