@@ -268,13 +268,14 @@
           }
 
           &__airportName {
-            font-weight: normal;
+            font-weight: 300;
             font-size: 18px;
             color: #0a0a0f;
           }
 
           &__countryName {
-            font-weight: normal;
+            padding-top: 2px;
+            font-weight: 300;
             font-size: 18px;
             color: rgba(100,100,100,.75);
           }
@@ -304,6 +305,14 @@
 
         @include adaptivity (phone) {
           padding: 0!important;
+
+          &:first-of-type {
+            padding: 0 7.5px 0 0 !important;
+          }
+
+          &:last-of-type {
+            padding: 0 0 0 7.5px !important;
+          }
         }
       }
       .widget-ui-input {
@@ -558,7 +567,7 @@
       }
 
       .widget-ui-mobile__title:before {
-        margin-top:0;
+        margin-top: -2px;
       }
     }
 
@@ -667,6 +676,7 @@
     &__back {
       left: 0px;
       top: 0px;
+      color: #666666;
 
       &:after {
         left: 16px;
