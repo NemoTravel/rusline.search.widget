@@ -179,6 +179,10 @@
 
           @include adaptivity (phone){
             margin-bottom:1rem;
+
+            .widget-form-airports__airportCode_withArrow {
+              right: 40px;
+            }
           }
 
           @include adaptivity (min-desktop-middle) {
@@ -201,7 +205,13 @@
         }
 
         &:last-of-type {
-          @include adaptivity (not-phone){
+          @include adaptivity (phone) {
+            .widget-form-airports__airportCode_withArrow {
+              right: 40px;
+            }
+          }
+
+          @include adaptivity (not-phone) {
             padding-left:15px;
 
             .widget-form-airports__airportCode_withArrow {
@@ -342,9 +352,11 @@
     &-passengers {
       &__content {
         left: auto;
+        margin-top: 10px;
 
         @include adaptivity (phone) {
           left: 0;
+          margin-top: 0px;
         }
       }
 
