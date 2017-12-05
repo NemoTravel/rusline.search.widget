@@ -40,7 +40,7 @@
         &.btn-primary {
           transition: all .1s ease-in;
           height: 45px;
-          padding: 0 18px;
+          padding: 0;
           border: none;
           border-radius: 4px;
           font-size: 18px;
@@ -48,6 +48,10 @@
           line-height: 45px;
           background: $searchBtnBGC;
           font-weight:normal;
+
+          @include adaptivity (not-phone) {
+            width: 90px;
+          }
 
           &:hover,
           &:active {
@@ -181,17 +185,17 @@
             padding-left:0;
           }
 
-          .widget-form-airports__airportCode_withArrow {
-            display: none;
-          }
-
           @include adaptivity (not-phone) {
             .widget-ui-input__arrow {
               right: 35px;
             }
 
             .widget-form-airports__airportCode_withArrow {
-              right: 67px;
+              right: 45px;
+              background: #fff;
+              border-top: 1px solid;
+              border-bottom: 1px solid;
+              padding-left: 5px;
             }
           }
         }
@@ -199,6 +203,14 @@
         &:last-of-type {
           @include adaptivity (not-phone){
             padding-left:15px;
+
+            .widget-form-airports__airportCode_withArrow {
+              right: 10px;
+              background: #fff;
+              border-top: 1px solid;
+              border-bottom: 1px solid;
+              padding-left: 5px;
+            }
           }
 
           @include adaptivity (min-desktop-middle) {
