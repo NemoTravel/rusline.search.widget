@@ -86,7 +86,7 @@
             }
 
             @media (min-width: 650px) and (max-width: 768px){
-              padding-right: 15px!important;
+              padding-right: 10px!important;
             }
           }
 
@@ -116,7 +116,7 @@
         line-height: 0.4!important;
 
         @include adaptivity (phone) {
-          left: unset;
+          left: unset!important;
           right: 0px;
           top: -55px;
           border: 0;
@@ -204,6 +204,10 @@
           @include adaptivity (min-desktop-middle) {
             padding-left: 10px;
             padding-right: 10px;
+          }
+
+          @media (min-width: 650px) and (max-width: 768px){
+            padding-left: 5px!important;
           }
 
           .Select {
@@ -343,6 +347,7 @@
         &:hover {
           background-color: $searchFormBGC;
           border-color: $searchFormBGC;
+          color: #fff;
         }
 
         &_disabled {
@@ -440,14 +445,14 @@
         }
 
         @include adaptivity (phone) {
-          top: 10px;
+          top: 13px;
 
           &--previous {
-            left: 80px;
+            left: 60px;
           }
 
           &--next {
-            right: 80px;
+            right: 60px;
           }
         }
       }
