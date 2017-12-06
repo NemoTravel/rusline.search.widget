@@ -3,7 +3,7 @@ const server = express();
 const path = require('path');
 const opn = require('opn');
 const compression = require('compression');
-const port = 5555;
+const port = 5558;
 
 server.use(compression());
 server.use(express.static('./dist'));

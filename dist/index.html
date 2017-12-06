@@ -52,11 +52,12 @@
 <script>
 	FlightsSearchWidget.init({
 		rootElement: document.getElementById('root'),
+        webskyURL: 'http://demo.websky.aero/gru',
 		nemoURL: 'http://sys.nemo.travel',
 		readOnlyAutocomplete: false,
 		locale: 'ru',
 		verticalForm: false,
-		mode: 'NEMO',
+		mode: 'WEBSKY',
 		useNearestAirport: true,
 		highlightAvailableDates: true
 	});
