@@ -18,16 +18,21 @@ export const systemState = {
 	autoFocusReturnDate: false,
 	mode: MODE_NEMO,
 	defaultDepartureAirport: null,
+	defaultArrivalAirport: null,
+	defaultDepartureDate: null,
+	defaultReturnDate: null,
+	defaultPassengers: {
+		ADT: 1
+	},
+	defaultServiceClass: 'Economy',
+	directOnly: false,
+	vicinityDatesMode: false,
 	useNearestAirport: false,
 	highlightAvailableDates: false,
-	vicinityDays: 3
+	vicinityDays: 3,
+	enableCoupon: false,
+	enableMileCard: false
 };
-
-// export const blockVisibilityState = {
-// 	search: true,
-// 	registration: false,
-// 	bookings: false
-// };
 
 export const previousSearchesGroup = {
 	options: {},
@@ -69,7 +74,7 @@ export const passengersState = {
 		title: 'passenger_ADT',
 		ageTitle: 'passenger_ADT_age',
 		code: 'ADT',
-		count: 1
+		count: 0
 	},
 	CLD: {
 		title: 'passenger_CLD',
@@ -92,9 +97,20 @@ export const passengersState = {
 };
 
 export const additionalState = {
-	classType: CLASS_TYPES[0],
-	vicinityDates: false,
-	directFlight: false
+	classType: null,
+	vicinityDates: null,
+	directFlight: null
+};
+
+export const couponState = {
+	isActive: false,
+	number: null
+};
+
+export const mileCardState = {
+	isActive: false,
+	number: null,
+	password: null
 };
 
 export const initialState = {
@@ -103,7 +119,9 @@ export const initialState = {
 		dates: datesState,
 		passengers: passengersState,
 		autocomplete: autocompleteState,
-		additional: additionalState
+		additional: additionalState,
+		coupon: couponState,
+		mileCard: mileCardState
 	}
 };
 
@@ -195,6 +213,36 @@ export const fillStateFromCache = (currentState, stateFromCache) => {
 					if (stateFromCache.form.additional.hasOwnProperty(option)) {
 						state.form.additional[option] = stateFromCache.form.additional[option];
 					}
+				}
+			}
+
+			if (stateFromCache.form.coupon) {
+				const cachedCouponIsActive = stateFromCache.form.coupon.isActive;
+				const cachedCouponNumber = stateFromCache.form.coupon.number;
+
+				if (cachedCouponIsActive) {
+					state.form.coupon.isActive = cachedCouponIsActive;
+				}
+				if (cachedCouponNumber) {
+					state.form.coupon.number = cachedCouponNumber;
+				}
+			}
+
+			if (stateFromCache.form.mileCard) {
+				const cachedMileCardIsActive = stateFromCache.form.mileCard.isActive;
+				const cachedMileCardNumber = stateFromCache.form.mileCard.number;
+				const cachedMileCardPassword = stateFromCache.form.mileCard.password;
+
+				if (cachedMileCardIsActive) {
+					state.form.mileCard.isActive = cachedMileCardIsActive;
+				}
+
+				if (cachedMileCardNumber) {
+					state.form.mileCard.number = cachedMileCardNumber;
+				}
+
+				if (cachedMileCardPassword) {
+					state.form.mileCard.password = cachedMileCardPassword;
 				}
 			}
 		}

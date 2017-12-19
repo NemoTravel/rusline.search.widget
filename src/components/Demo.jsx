@@ -6,6 +6,7 @@ import { systemState } from 'state';
 import * as Cache from 'cache';
 import autobind from 'autobind-decorator';
 import CodeBlock from 'components/UI/CodeBlock';
+import 'css/nemo/main.scss';
 
 export default class Demo extends React.Component {
 	constructor(props) {
@@ -21,7 +22,8 @@ export default class Demo extends React.Component {
 		this.state = {
 			webskyURL: defaultWebskyURL,
 			nemoURL: defaultNemoURL,
-			generatedConfig: ''
+			generatedConfig: '',
+			nemoStyles: false
 		};
 
 		this.config = {
@@ -32,6 +34,13 @@ export default class Demo extends React.Component {
 		};
 
 		Cache.set(Cache.KEY_LOCALE, defaultLang);
+	}
+
+	@autobind
+	toggleNemoStyles() {
+		this.setState({
+			nemoStyles: !this.state.nemoStyles
+		});
 	}
 
 	componentDidMount() {
@@ -54,6 +63,8 @@ export default class Demo extends React.Component {
 
 	render() {
 		return <div className="widget-demo">
+			{this.state.nemoStyles ? <link rel="stylesheet" href="/nemo-flights.search.widget.min.css"/> : null}
+
 			<div className="form widget-demo-config">
 				<h3>Параметры виджета</h3>
 
@@ -62,9 +73,8 @@ export default class Demo extends React.Component {
 						<p>Ниже представлены элементы управления, позволяющие в режиме реального времени изменять
 							конфигурацию виджета.</p>
 						<p>
-							Полный перечень параметров конфигурации представлен в описании к репозиторию виджета:
-							<a href="https://github.com/NemoTravel/flights.search.widget#Конфигурация">
-								https://github.com/NemoTravel/flights.search.widget#Конфигурация</a>
+							Полный перечень параметров конфигурации представлен в описании к репозиторию виджета:&nbsp;
+							<a href="https://github.com/NemoTravel/flights.search.widget#Конфигурация">https://github.com/NemoTravel/flights.search.widget#Конфигурация</a>
 						</p>
 					</div>
 				</div>
@@ -213,6 +223,39 @@ export default class Demo extends React.Component {
 							}}/>
 							<CodeBlock>highlightAvailableDates</CodeBlock>: подсвечивать в календаре даты с доступными
 							рейсами (для режима Websky)
+						</label>
+					</div>
+				</div>
+
+				<div className="row">
+					<div className="col form-check">
+						<label className="form-check-label">
+							<input type="checkbox" className="form-check-input" onChange={e => {
+								this.config.enableCoupon = e.target.checked;
+								this.processConfig();
+							}}/>
+							<CodeBlock>enableCoupon</CodeBlock>: Добавляет поле `У меня есть купон на скидку` (для режима Websky)
+						</label>
+					</div>
+				</div>
+
+				<div className="row" style={{ display: 'none' }}>
+					<div className="col form-check">
+						<label className="form-check-label">
+							<input type="checkbox" className="form-check-input" onChange={e => {
+								this.config.enableMileCard = e.target.checked;
+								this.processConfig();
+							}}/>
+							<CodeBlock>enableMileCard</CodeBlock>: Добавляет поле `Оплата милями` (для режима Websky)
+						</label>
+					</div>
+				</div>
+
+				<div className="row">
+					<div className="col form-check">
+						<label className="form-check-label">
+							<input type="checkbox" className="form-check-input" onChange={this.toggleNemoStyles}/>
+							<CodeBlock>Включить стилизацию Nemo</CodeBlock>
 						</label>
 					</div>
 				</div>

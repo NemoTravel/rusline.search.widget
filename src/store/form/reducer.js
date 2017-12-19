@@ -4,6 +4,8 @@ import passengers from 'store/form/passengers/reducer';
 import autocomplete from 'store/form/autocomplete/reducer';
 import dates from 'store/form/dates/reducer';
 import additional from 'store/form/additional/reducer';
+import coupon from 'store/form/coupon/reducer';
+import mileCard from 'store/form/mileCard/reducer';
 
 export const showErrorsReducer = (state = false, { type, payload } = {}) => {
 	return type === SHOW_ERRORS ? payload : state;
@@ -17,6 +19,8 @@ export default function(state, action) {
 		dates,
 		autocomplete,
 		passengers,
-		additional
+		additional,
+		coupon,
+		mileCard
 	})(state, action);
 }

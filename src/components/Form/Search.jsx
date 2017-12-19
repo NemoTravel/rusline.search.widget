@@ -4,8 +4,15 @@ import AutocompleteContainer from 'components/Form/Search/AutocompleteContainer'
 import PassengersContainer from 'components/Form/Search/PassengersContainer';
 import AdditionalOptionsContainer from 'components/Form/Search/AdditionalOptionsContainer';
 import { i18n } from 'utils';
+import PropTypes from 'prop-types';
 
 export default class Search extends React.Component {
+	propTypes = {
+		startSearch: PropTypes.func.isRequired,
+		showCouponField: PropTypes.bool.isRequired,
+		showMileCardField: PropTypes.bool.isRequired
+	};
+
 	render() {
 		const { startSearch } = this.props;
 

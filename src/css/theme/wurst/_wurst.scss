@@ -83,10 +83,12 @@
 
       &__footer {
         .col {
+          flex-basis: 0;
+
           &:first-of-type {
             @include adaptivity (min-desktop-middle) {
               padding-left: 10px;
-              padding-right: 0px;
+              padding-right: 0;
             }
 
             @media (min-width: 650px) and (max-width: 768px){
@@ -97,11 +99,12 @@
           &:last-of-type {
             @include adaptivity (min-desktop-middle) {
               padding-left: 10px;
-              padding-right: 0px;
+              padding-right: 0;
             }
           }
 
           @include adaptivity(phone) {
+            flex-basis: 100%;
             padding: 0!important;
           }
         }
@@ -241,6 +244,8 @@
               .Select {
                 &-input:not(input),
                 &-placeholder {
+                  font-weight: 300 !important;
+                  color: #a9a9a9 !important;
                   padding-left: 10px !important;
                 }
               }
@@ -290,6 +295,9 @@
           padding-left: 10px;
 
           &__placeholder {
+            padding-top: 1px;
+            font-weight: 300!important;
+            color: #a9a9a9!important;
             padding-left: 10px!important;
           }
 
@@ -350,13 +358,22 @@
     }
 
     &-passengers {
+      &__trigger {
+        .form-control {
+          &.widget-form-passengers__trigger__title {
+            font-weight: 300 !important;
+            padding-left: 10px !important;
+          }
+        }
+      }
+
       &__content {
         left: auto;
         margin-top: 10px;
 
         @include adaptivity (phone) {
           left: 0;
-          margin-top: 0px;
+          margin-top: 0;
         }
       }
 
@@ -720,6 +737,14 @@
       &:after {
         left: 16px;
       }
+    }
+  }
+}
+
+.react-datepicker {
+  &-wrapper {
+    .widget-ui-input {
+      font-weight: 300!important;
     }
   }
 }
