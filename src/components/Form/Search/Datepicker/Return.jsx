@@ -23,7 +23,7 @@ export default class Return extends Datepicker {
 
 		this.type = 'return';
 		this.placeholder = i18n('form', 'dateBack');
-		this.popperPlacement = 'top-end';
+		this.popperPlacement = 'bottom';
 		this.isDisableable = true;
 	}
 
