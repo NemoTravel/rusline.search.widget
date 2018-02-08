@@ -61,27 +61,27 @@ $arrow-down: url("data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGlu
 		@media only screen and (min-width: $screen-size-tablet + 1) { @content; }
 	}
 
-	@elseif $media == desktop-large {
+	@else if $media == desktop-large {
 		@media (min-width: $desktop + 1) { @content; }
 	}
 
-	@elseif $media == min-desktop-middle {
+	@else if $media == min-desktop-middle {
 		@media (min-width: $tablet + 1) { @content; }
 	}
 
-	@elseif $media == desktop-middle {
+	@else if $media == desktop-middle {
 		@media (min-width: $tablet + 1) and (max-width: $desktop) { @content; }
 	}
 
-	@elseif $media == max-desktop-middle {
+	@else if $media == max-desktop-middle {
 		@media (max-width: $tablet) { @content; }
 	}
 
-	@elseif $media == tablet {
+	@else if $media == tablet {
 		@media (min-width: $phone + 1) and (max-width: $tablet) { @content; }
 	}
 
-	@elseif $media == phone {
+	@else if $media == phone {
 		@media only screen and (max-width: $phone) { @content; }
 	}
 }

@@ -1,752 +1,779 @@
 & {
-  font-family: $fontTheme;
-  background: none;
-
-  .row {
-    margin-left: 0;
-    margin-right: 0;
-
-    @include adaptivity (max-desktop-middle) {
-      justify-content: space-between;
-      width: 100%;
-    }
-  }
-
-  .Select {
-    @include adaptivity (min-desktop-middle) {
-      width: 275px;
-    }
-
-    @include adaptivity (desktop-middle) {
-      width: 215px;
-    }
-
-    &-arrow-zone {
-      display: none;
-    }
-  }
-
-  &-form {
-    @include adaptivity (min-desktop-middle) {
-      max-width: 1221px;
-      margin: 0 auto;
-    }
-
-    &-search {
-      padding:10px;
-      background-color: $searchFormBGC-rusline;
-
-      &__startButton {
-        &.btn-primary {
-          transition: all .1s ease-in;
-          height: 45px;
-          padding: 0;
-          border: none;
-          border-radius: 4px;
-          font-size: 18px;
-          color: $searchBtnColor;
-          line-height: 45px;
-          background: $searchBtnBGC;
-          font-weight:normal;
-
-          @include adaptivity (not-phone) {
-            width: 90px;
-          }
-
-          &:hover,
-          &:active {
-            background: $searchBtnBGC-hover!important;
-            color: $searchBtnColor;
-          }
-
-          &:active {
-            box-shadow: 0 0 0 0.2rem $searchBtnBoxShadow-active!important;
-            border-color: $searchBtnBGC-hover!important;
-          }
-        }
-      }
-
-      &__wrapper {
-        display: flex;
-        flex-wrap: wrap;
-
-        @include adaptivity(min-desktop-middle) {
-          justify-content: space-between;
-        }
-
-        .form-group {
-          @include adaptivity(min-desktop-middle) {
-            margin-bottom:0;
-          }
-        }
-      }
-
-      &__footer {
-        .col {
-          flex-basis: 0;
-
-          &:first-of-type {
-            @include adaptivity (min-desktop-middle) {
-              padding-left: 10px;
-              padding-right: 0;
-            }
-
-            @media (min-width: 650px) and (max-width: 768px){
-              padding-right: 10px!important;
-            }
-          }
-
-          &:last-of-type {
-            @include adaptivity (min-desktop-middle) {
-              padding-left: 10px;
-              padding-right: 0;
-            }
-          }
-
-          @include adaptivity(phone) {
-            flex-basis: 100%;
-            padding: 0!important;
-          }
-        }
-      }
-    }
-
-    &-airports {
-      &__swap {
-        border-radius: 0;
-        width: 40px;
-        height: 39px;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        font-size: 26px;
-        line-height: 0.4!important;
-
-        @include adaptivity (phone) {
-          left: unset!important;
-          right: 0px;
-          top: -55px;
-          border: 0;
-          width: 38px;
-          height: 38px;
-        }
-
-        @include adaptivity (not-phone) {
-          left: -57px;
-          border: 0;
-        }
-
-        @include adaptivity (tablet) {
-          left: -55px;
-        }
-
-        @include adaptivity (min-desktop-middle) {
-          left: -55px;
-        }
-
-        &:before,
-        &:after {
-          content: "";
-          width: 17px;
-          height: 7px;
-          transition: all .1s ease-in;
-        }
-
-        &:before {
-          background: $arrow;
-          margin-bottom: 1px;
-        }
-        &:after {
-          background: $arrow;
-          transform: rotate(180deg) translateX(1px);
-          margin-top: 1px;
-        }
-
-        &:hover{
-          background: #fff;
-
-          &:before{
-            margin-left: 5px;
-          }
-          &:after{
-            margin-right: 5px;
-          }
-        }
-      }
-
-      &__col.col {
-        &:first-of-type {
-          @media (min-width: 650px) and (max-width: 768px){
-            padding-right: 10px!important;
-          }
-
-          @include adaptivity (phone){
-            margin-bottom:1rem;
-
-            .widget-form-airports__airportCode_withArrow {
-              right: 40px;
-            }
-          }
-
-          @include adaptivity (min-desktop-middle) {
-            padding-left:0;
-          }
-
-          @include adaptivity (not-phone) {
-            .widget-ui-input__arrow {
-              right: 35px;
-            }
-
-            .widget-form-airports__airportCode_withArrow {
-              right: 45px;
-              background: #fff;
-              border-top: 1px solid;
-              border-bottom: 1px solid;
-              padding-left: 5px;
-            }
-          }
-        }
-
-        &:last-of-type {
-          @include adaptivity (phone) {
-            .widget-form-airports__airportCode_withArrow {
-              right: 40px;
-            }
-          }
-
-          @include adaptivity (not-phone) {
-            padding-left:15px;
-
-            .widget-form-airports__airportCode_withArrow {
-              right: 10px;
-              background: #fff;
-              border-top: 1px solid;
-              border-bottom: 1px solid;
-              padding-left: 5px;
-            }
-          }
-
-          @include adaptivity (min-desktop-middle) {
-            padding-left: 10px;
-            padding-right: 10px;
-          }
-
-          @media (min-width: 650px) and (max-width: 768px){
-            padding-left: 5px!important;
-          }
-
-          .Select {
-            &-control {
-              .widget-form-airports__select__value{
-                padding-left: 10px!important;
-              }
-
-              .Select {
-                &-input:not(input),
-                &-placeholder {
-                  font-weight: 300 !important;
-                  color: #a9a9a9 !important;
-                  padding-left: 10px !important;
-                }
-              }
-            }
-          }
-        }
-
-        @include adaptivity (phone) {
-          padding: 0!important;
-        }
-      }
-
-      &__select {
-        .Select {
-          &-control {
-            border-radius: 2px;
-            height: 45px;
-          }
-
-          &-placeholder{
-            font-size: 18px;
-            font-weight: 300;
-            line-height: 42px;
-            padding-top: 1px;
-            padding-left: 10px;
-            color: rgba(100,100,100,.75);
-          }
-
-          &-input {
-            height: 42px;
-            padding-left:10px;
-
-            input {
-              height: 42px;
-              line-height: 42px;
-
-              @include adaptivity(desktop-large) {
-                min-width: 250px;
-              }
-
-              @include adaptivity(desktop-middle) {
-                max-width: 180px;
-              }
-            }
-          }
-        }
-
-        &__value {
-          padding-left: 10px;
-
-          &__placeholder {
-            padding-top: 1px;
-            font-weight: 300!important;
-            color: #a9a9a9!important;
-            padding-left: 10px!important;
-          }
-
-          &__airportName {
-            font-weight: 300;
-            font-size: 18px;
-            color: #0a0a0f;
-          }
-
-          &__countryName {
-            padding-top: 2px;
-            font-weight: 300;
-            font-size: 18px;
-            color: rgba(100,100,100,.75);
-          }
-        }
-      }
-    }
-
-    &-dates {
-      &__col.col {
-        @include adaptivity (min-desktop-middle) {
-          padding: 0!important;
-        }
-
-        &:last-of-type{
-          padding-left: 10px!important;
-        }
-
-        @include adaptivity (tablet) {
-          &:first-of-type {
-            padding: 0 7.5px 0 15px!important;
-          }
-
-          &:last-of-type {
-            padding: 0 15px 0 7.5px!important;
-          }
-        }
-
-        @include adaptivity (phone) {
-          padding: 0!important;
-
-          &:first-of-type {
-            padding: 0 7.5px 0 0 !important;
-          }
-
-          &:last-of-type {
-            padding: 0 0 0 7.5px !important;
-          }
-        }
-      }
-      .widget-ui-input {
-        border-radius: 2px;
-        @include adaptivity (min-desktop-middle) {
-          width: 175px;
-        }
-      }
-    }
-
-    &-passengers {
-      &__trigger {
-        .form-control {
-          &.widget-form-passengers__trigger__title {
-            font-weight: 300 !important;
-            padding-left: 10px !important;
-          }
-        }
-      }
-
-      &__content {
-        left: auto;
-        margin-top: 10px;
-
-        @include adaptivity (phone) {
-          left: 0;
-          margin-top: 0;
-        }
-      }
-
-      &__icon {
-        border: 1px solid;
-        position: relative;
-        display: flex;
-        color: $searchFormBGC;
-        justify-content: center;
-        align-items: center;
-
-        &:hover {
-          background-color: $searchFormBGC;
-          border-color: $searchFormBGC;
-          color: #fff;
-        }
-
-        &_disabled {
-          color: #F2F2F2;
-
-          &:hover {
-            background-color: transparent;
-            border-color: #F2F2F2;
-          }
-        }
-
-        &:after {
-          width: auto;
-          height: auto;
-          position: static;
-          display: inline;
-        }
-
-
-      }
-
-      &__counter {
-        margin-left: 10px;
-      }
-    }
-  }
-
-  & &-ui {
-    &-tooltip__pop {
-      background: #ff1723;
-
-      &:after {
-        border-top-color: #ff1723;
-      }
-    }
-
-    &-input {
-      &[readonly] {
-        height: 45px;
-        padding-left: 10px!important;
-      }
-
-      &__arrow {
-        &:after {
-          content: "";
-          width: 12px;
-          height: 9px;
-          margin-top: 4px;
-          background: $arrow-down;
-          background-repeat: no-repeat;
-        }
-      }
-
-      &__closer {
-        color: $searchFormBGC;
-      }
-
-      &_disabled {
-        border-color: #ccc!important;
-        background-color: $searchBtnColor!important;
-        transition: all .1s ease-in!important;
-
-
-        &:hover {
-          background-color: $searchBtnColor!important;
-          box-shadow: inset 0 0 16px $inputDisabled-hover;
-        }
-      }
-    }
-  }
-
-  & &-ui-datepicker {
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
-    padding-top: 0;
-    border: none;
-
-    &__specialDay {
-      color: #fff !important;
-      background: #808285 !important;
-      position: relative;
-
-      &:after {
-        content: "";
-        border-top: 5px solid transparent;
-        border-right: 7px solid #fff;
-        border-bottom: 5px solid transparent;
-        position: absolute;
-        right: 0;
-        top: 50%;
-        margin-top: -5px;
-      }
-    }
-
-    .react-datepicker {
-      &__navigation {
-        top: 40px;
-        width: 25px;
-        height: 25px;
-        z-index: 1000;
-
-        &--previous:hover,
-        &--next:hover {
-          background-color: #737373;
-          border-color: #737373;
-        }
-
-        @include adaptivity (phone) {
-          top: 13px;
-
-          &--previous {
-            left: 60px;
-          }
-
-          &--next {
-            right: 60px;
-          }
-        }
-      }
-
-      &__current-month {
-        background: #fff;
-        padding: 43px 0 5px;
-
-        @include adaptivity (phone) {
-          line-height: 28px;
-        }
-      }
-
-      &__month {
-        @include adaptivity (phone) {
-          border: none;
-        }
-
-        &-container {
-          padding: 0;
-        }
-      }
-
-      &__week {
-        margin-bottom:0;
-
-        @include adaptivity (phone) {
-          &:first-child {
-            .react-datepicker__day {
-              border-top: 1px solid #e6e6e6;
-            }
-          }
-        }
-      }
-
-      &__day {
-        border: 1px solid #fff;
-        background: #F2F2F2;
-        border-radius: 0;
-
-        &:hover {
-          color: #fff !important;
-          background: #808285 !important;
-        }
-
-        @include adaptivity (phone) {
-          &:first-child {
-            border-left: 1px solid #e6e6e6;
-          }
-        }
-
-        &-name {
-          text-decoration: underline;
-        }
-
-        &--outside-month {
-          opacity:0;
-          color: #ccc;
-        }
-
-        &--today {
-          border: 1px solid #fff;
-          background: #F2F2F2;
-          font-weight: bold;
-          color: #666666;
-
-          &:hover {
-            color: #fff !important;
-            background: #808285 !important;
-          }
-        }
-
-        &--selected {
-          color: #fff !important;
-          background: #808285 !important;
-          position: relative;
-
-          &:before {
-            content: "";
-            border-top: 5px solid transparent;
-            border-left: 7px solid #fff;
-            border-bottom: 5px solid transparent;
-            position: absolute;
-            left: 0;
-            top: 50%;
-            margin-top: -5px;
-          }
-
-          &:after {
-            display: none;
-          }
-        }
-
-        &--highlighted {
-          background: rgba(128, 130, 133, 0.2);
-          color: #666666;
-        }
-      }
-    }
-
-    &__calendar {
-      &:after {
-        content: "";
-        background: $calendar;
-        width: 28px;
-        height: 21px;
-      }
-    }
-
-    &__header {
-      padding-top: 8px;
-      color: $searchBtnColor;
-
-      @include adaptivity (phone) {
-        padding-top: 0px;
-        background: $searchFormBGC;;
-      }
-
-      .widget-ui-mobile__title:before {
-        margin-top: -2px;
-      }
-    }
-
-    &__footer {
-      bottom: 9px;
-
-      &__button {
-        background: transparent;
-        color: $searchFormBGC;
-        border-color: $searchFormBGC;
-
-        &:active,
-        &:hover {
-          background: $searchFormBGC;
-        }
-      }
-    }
-
-    &_departure {
-      .react-datepicker__day {
-        position: relative;
-
-        &:hover {
-          &:before {
-            content: "";
-            border-top: 5px solid transparent;
-            border-left: 7px solid #fff;
-            border-bottom: 5px solid transparent;
-            position: absolute;
-            left: 0;
-            top: 50%;
-            margin-top: -5px;
-          }
-        }
-      }
-    }
-
-    &_return {
-      padding-bottom: 50px;
-
-      .react-datepicker__day {
-        position: relative;
-
-        &:hover {
-          &:after {
-            content: "";
-            border-top: 5px solid transparent;
-            border-right: 7px solid #fff;
-            border-bottom: 5px solid transparent;
-            position: absolute;
-            right: 0;
-            top: 50%;
-            margin-top: -5px;
-          }
-        }
-      }
-    }
-  }
-
-  & div[disabled] &-ui-datepicker {
-    &__calendar {
-      color: $searchBtnColor;
-    }
-  }
-
-  &-ui {
-    &-input {
-      font-size: 18px!important;
-      color: #666666!important;
-      padding-left: 15px!important;
-      font-weight: normal!important;
-
-      @include placeholder () {
-        font-size: 18px;
-        color: rgba(100, 100, 100, 0.75);
-      }
-    }
-
-    &-dropdown {
-      &__trigger {
-        .form-control {
-          font-size: 18px!important;
-          color: #666666!important;
-          padding-left: 15px!important;
-          font-weight: normal!important;
-          border-radius: 2px;
-          background-color: $searchBtnColor;
-
-          @include adaptivity(min-desktop-middle) {
-            min-width: 160px;
-            height: 45px;
-            line-height: 45px!important;
-            padding-left: 10px!important;
-          }
-        }
-      }
-    }
-  }
-
-  & &-ui-mobile {
-    &__header {
-      background-color: #fff;
-      color: #737373;
-    }
-
-    &__back {
-      left: 0px;
-      top: 0px;
-      color: #666666;
-
-      &:after {
-        left: 16px;
-      }
-    }
-  }
+	font-family: $fontTheme;
+	background: none;
+
+	.row {
+		margin-left: 0;
+		margin-right: 0;
+
+		@include adaptivity (max-desktop-middle) {
+			justify-content: space-between;
+			width: 100%;
+		}
+	}
+
+	.Select {
+		@include adaptivity (min-desktop-middle) {
+			width: 275px;
+		}
+
+		@include adaptivity (desktop-middle) {
+			width: 215px;
+		}
+
+		&-arrow-zone {
+			display: none;
+		}
+	}
+
+	&-form {
+		@include adaptivity (min-desktop-middle) {
+			max-width: 1221px;
+			margin: 0 auto;
+		}
+
+		&-search {
+			padding:10px;
+			background-color: $searchFormBGC-rusline;
+
+			&__startButton {
+				&.btn-primary {
+					transition: all .1s ease-in;
+					height: 45px;
+					padding: 0;
+					border: none;
+					border-radius: 4px;
+					font-size: 18px;
+					color: $searchBtnColor;
+					line-height: 45px;
+					background: $searchBtnBGC;
+					font-weight:normal;
+
+					@include adaptivity (not-phone) {
+						width: 90px;
+					}
+
+					&:hover,
+					&:active {
+						background: $searchBtnBGC-hover!important;
+						color: $searchBtnColor;
+					}
+
+					&:active {
+						box-shadow: 0 0 0 0.2rem $searchBtnBoxShadow-active!important;
+						border-color: $searchBtnBGC-hover!important;
+					}
+				}
+			}
+
+			&__wrapper {
+				display: flex;
+				flex-wrap: wrap;
+
+				@include adaptivity(min-desktop-middle) {
+					justify-content: space-between;
+				}
+
+				.form-group {
+					@include adaptivity(min-desktop-middle) {
+						margin-bottom: 0;
+					}
+				}
+			}
+
+			&__footer {
+				.col {
+					flex-basis: auto;
+					width: auto;
+
+					&:first-of-type {
+						@include adaptivity (min-desktop-middle) {
+							padding-left: 10px;
+							padding-right: 0;
+						}
+
+						@media (min-width: 650px) and (max-width: 768px){
+							padding-right: 10px!important;
+						}
+					}
+
+					&:last-of-type {
+						@include adaptivity (min-desktop-middle) {
+							padding-left: 10px;
+							padding-right: 0;
+						}
+					}
+
+					@include adaptivity (max-desktop-middle) {
+						flex-basis: 0;
+					}
+
+					@include adaptivity(phone) {
+						flex-basis: 100%;
+						padding: 0!important;
+					}
+				}
+			}
+		}
+
+		&-airports {
+			.col {
+				flex-basis: auto;
+				width: auto;
+			}
+
+			&__swap {
+				border-radius: 0;
+				width: 40px;
+				height: 39px;
+				display: flex;
+				flex-direction: column;
+				justify-content: center;
+				font-size: 26px;
+				line-height: 0.4!important;
+
+				@include adaptivity (phone) {
+					left: unset!important;
+					right: 0px;
+					top: -55px;
+					border: 0;
+					width: 38px;
+					height: 38px;
+				}
+
+				@include adaptivity (not-phone) {
+					left: -57px;
+					border: 0;
+				}
+
+				@include adaptivity (tablet) {
+					left: -55px;
+				}
+
+				@include adaptivity (min-desktop-middle) {
+					left: -55px;
+				}
+
+				&:before,
+				&:after {
+					content: "";
+					width: 17px;
+					height: 7px;
+					transition: all .1s ease-in;
+				}
+
+				&:before {
+					background: $arrow;
+					margin-bottom: 1px;
+				}
+				
+				&:after {
+					background: $arrow;
+					transform: rotate(180deg) translateX(1px);
+					margin-top: 1px;
+				}
+
+				&:hover{
+					background: #fff;
+
+					&:before{
+						margin-left: 5px;
+					}
+					
+					&:after{
+						margin-right: 5px;
+					}
+				}
+			}
+
+			&__col.col {
+				&:first-of-type {
+					@media (min-width: 650px) and (max-width: 768px){
+						padding-right: 10px!important;
+					}
+
+					@include adaptivity (phone){
+						margin-bottom:1rem;
+
+						.widget-form-airports__airportCode_withArrow {
+							right: 40px;
+						}
+					}
+
+					@include adaptivity (min-desktop-middle) {
+						padding-left:0;
+					}
+
+					@include adaptivity (not-phone) {
+						.widget-ui-input__arrow {
+							right: 35px;
+						}
+
+						.widget-form-airports__airportCode_withArrow {
+							right: 45px;
+							background: #fff;
+							border-top: 1px solid;
+							border-bottom: 1px solid;
+							padding-left: 5px;
+						}
+					}
+				}
+
+				&:last-of-type {
+					@include adaptivity (phone) {
+						.widget-form-airports__airportCode_withArrow {
+							right: 40px;
+						}
+					}
+
+					@include adaptivity (not-phone) {
+						padding-left:15px;
+
+						.widget-form-airports__airportCode_withArrow {
+							right: 10px;
+							background: #fff;
+							border-top: 1px solid;
+							border-bottom: 1px solid;
+							padding-left: 5px;
+						}
+					}
+
+					@include adaptivity (min-desktop-middle) {
+						padding-left: 10px;
+						padding-right: 10px;
+					}
+
+					@media (min-width: 650px) and (max-width: 768px){
+						 padding-left: 5px!important;
+					}
+
+					.Select {
+						&-control {
+							.widget-form-airports__select__value{
+								padding-left: 10px!important;
+							}
+
+							.Select {
+								&-input:not(input),
+								&-placeholder {
+									font-weight: 300 !important;
+									color: #a9a9a9 !important;
+									padding-left: 10px !important;
+								}
+							}
+						}
+					}
+				}
+
+				@include adaptivity (phone) {
+					padding: 0!important;
+				}
+			}
+
+			&__select {
+				.Select {
+					&-control {
+						border-radius: 2px;
+						height: 45px;
+					}
+
+					&-placeholder{
+						font-size: 18px;
+						font-weight: 300;
+						line-height: 42px;
+						padding-top: 1px;
+						padding-left: 10px;
+						color: rgba(100,100,100,.75);
+					}
+
+					&-input {
+						height: 42px;
+						padding-left:10px;
+
+						input {
+							height: 42px;
+							line-height: 42px;
+
+							@include adaptivity(desktop-large) {
+								min-width: 250px;
+							}
+
+							@include adaptivity(desktop-middle) {
+								max-width: 180px;
+							}
+						}
+					}
+				}
+
+				&__value {
+					padding-left: 10px;
+
+					&__placeholder {
+						padding-top: 1px;
+						font-weight: 300!important;
+						color: #a9a9a9!important;
+						padding-left: 10px!important;
+					}
+
+					&__airportName {
+						font-weight: 300;
+						font-size: 18px;
+						color: #0a0a0f;
+					}
+
+					&__countryName {
+						padding-top: 2px;
+						font-weight: 300;
+						font-size: 18px;
+						color: rgba(100,100,100,.75);
+					}
+				}
+			}
+		}
+
+		&-dates {
+			.col {
+				flex-basis: auto;
+				width: auto;
+
+				@include adaptivity (phone) {
+					flex-basis: 0;
+				}
+			}
+
+			&__col.col {
+				@include adaptivity (min-desktop-middle) {
+					padding: 0!important;
+				}
+
+				&:last-of-type{
+					padding-left: 10px!important;
+				}
+				
+				@include adaptivity (max-desktop-middle) {
+					&:last-of-type {
+						padding-left: 0.5rem!important;
+					}
+				}
+
+				@include adaptivity (tablet) {
+					&:first-of-type {
+						padding: 0 7.5px 0 15px!important;
+					}
+
+					&:last-of-type {
+						padding: 0 15px 0 7.5px!important;
+					}
+				}
+
+				@include adaptivity (phone) {
+					padding: 0!important;
+
+					&:first-of-type {
+						padding: 0 7.5px 0 0 !important;
+					}
+
+					&:last-of-type {
+						padding: 0 0 0 7.5px !important;
+					}
+				}
+			}
+			
+			.widget-ui-input {
+				border-radius: 2px;
+				
+				@include adaptivity (min-desktop-middle) {
+					width: 175px;
+				}
+			}
+		}
+
+		&-passengers {
+			&__trigger {
+				.form-control {
+					&.widget-form-passengers__trigger__title {
+						font-weight: 300 !important;
+						padding-left: 10px !important;
+					}
+				}
+			}
+
+			&__content {
+				left: auto;
+				margin-top: 10px;
+
+				@include adaptivity (phone) {
+					left: 0;
+					margin-top: 0;
+				}
+			}
+
+			&__icon {
+				border: 1px solid;
+				position: relative;
+				display: flex;
+				color: $searchFormBGC;
+				justify-content: center;
+				align-items: center;
+
+				&:hover {
+					background-color: $searchFormBGC;
+					border-color: $searchFormBGC;
+					color: #fff;
+				}
+
+				&_disabled {
+					color: #F2F2F2;
+
+					&:hover {
+						background-color: transparent;
+						border-color: #F2F2F2;
+					}
+				}
+
+				&:after {
+					width: auto;
+					height: auto;
+					position: static;
+					display: inline;
+				}
+			}
+
+			&__counter {
+				margin-left: 10px;
+			}
+		}
+	}
+
+	& &-ui {
+		&-tooltip__pop {
+			background: #ff1723;
+
+			&:after {
+				border-top-color: #ff1723;
+			}
+		}
+
+		&-input {
+			&[readonly] {
+				height: 45px;
+				padding-left: 10px!important;
+			}
+
+			&__arrow {
+				&:after {
+					content: "";
+					width: 12px;
+					height: 9px;
+					margin-top: 4px;
+					background: $arrow-down;
+					background-repeat: no-repeat;
+				}
+			}
+
+			&__closer {
+				color: $searchFormBGC;
+			}
+
+			&_disabled {
+				border-color: #ccc!important;
+				background-color: $searchBtnColor!important;
+				transition: all .1s ease-in!important;
+
+
+				&:hover {
+					background-color: $searchBtnColor!important;
+					box-shadow: inset 0 0 16px $inputDisabled-hover;
+				}
+			}
+		}
+	}
+
+	& &-ui-datepicker {
+		box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+		padding-top: 0;
+		border: none;
+
+		&__specialDay {
+			color: #fff !important;
+			background: #808285 !important;
+			position: relative;
+
+			&:after {
+				content: "";
+				border-top: 5px solid transparent;
+				border-right: 7px solid #fff;
+				border-bottom: 5px solid transparent;
+				position: absolute;
+				right: 0;
+				top: 50%;
+				margin-top: -5px;
+			}
+		}
+
+		.react-datepicker {
+			&__navigation {
+				top: 40px;
+				width: 25px;
+				height: 25px;
+				z-index: 1000;
+
+				&-previous:hover,
+				&-next:hover {
+					background-color: #737373;
+					border-color: #737373;
+				}
+
+				@include adaptivity (phone) {
+					top: 13px;
+
+					&-previous {
+						left: 60px;
+					}
+
+					&-next {
+						right: 60px;
+					}
+				}
+			}
+
+			&__current-month {
+				background: #fff;
+				padding: 43px 0 5px;
+
+				@include adaptivity (phone) {
+					line-height: 28px;
+				}
+			}
+
+			&__month {
+				@include adaptivity (phone) {
+					border: none;
+				}
+
+				&-container {
+					padding: 0;
+				}
+			}
+
+			&__week {
+				margin-bottom:0;
+
+				@include adaptivity (phone) {
+					&:first-child {
+						.react-datepicker__day {
+							border-top: 1px solid #e6e6e6;
+						}
+					}
+				}
+			}
+
+			&__day {
+				border: 1px solid #fff;
+				background: #F2F2F2;
+				border-radius: 0;
+
+				&:hover {
+					color: #fff !important;
+					background: #808285 !important;
+				}
+
+				@include adaptivity (phone) {
+					&:first-child {
+						border-left: 1px solid #e6e6e6;
+					}
+				}
+
+				&-name {
+					text-decoration: underline;
+				}
+
+				&-outside-month {
+					opacity:0;
+					color: #ccc;
+				}
+
+				&-today {
+					border: 1px solid #fff;
+					background: #F2F2F2;
+					font-weight: bold;
+					color: #666666;
+
+					&:hover {
+						color: #fff !important;
+						background: #808285 !important;
+					}
+				}
+
+				&-selected {
+					color: #fff !important;
+					background: #808285 !important;
+					position: relative;
+
+					&:before {
+						content: "";
+						border-top: 5px solid transparent;
+						border-left: 7px solid #fff;
+						border-bottom: 5px solid transparent;
+						position: absolute;
+						left: 0;
+						top: 50%;
+						margin-top: -5px;
+					}
+
+					&:after {
+						display: none;
+					}
+				}
+
+				&-highlighted {
+					background: rgba(128, 130, 133, 0.2);
+					color: #666666;
+				}
+			}
+		}
+
+		&__calendar {
+			&:after {
+				content: "";
+				background: $calendar;
+				width: 28px;
+				height: 21px;
+			}
+		}
+
+		&__header {
+			padding-top: 8px;
+			color: $searchBtnColor;
+
+			@include adaptivity (phone) {
+				padding-top: 0px;
+				background: $searchFormBGC;
+			}
+
+			.widget-ui-mobile__title:before {
+				margin-top: -2px;
+			}
+		}
+
+		&__footer {
+			bottom: 9px;
+
+			&__button {
+				background: transparent;
+				color: $searchFormBGC;
+				border-color: $searchFormBGC;
+
+				&:active,
+				&:hover {
+					background: $searchFormBGC;
+				}
+			}
+		}
+
+		&_departure {
+			.react-datepicker__day {
+				position: relative;
+
+				&:hover {
+					&:before {
+						content: "";
+						border-top: 5px solid transparent;
+						border-left: 7px solid #fff;
+						border-bottom: 5px solid transparent;
+						position: absolute;
+						left: 0;
+						top: 50%;
+						margin-top: -5px;
+					}
+				}
+			}
+		}
+
+		&_return {
+			padding-bottom: 50px;
+
+			.react-datepicker__day {
+				position: relative;
+
+				&:hover {
+					&:after {
+						content: "";
+						border-top: 5px solid transparent;
+						border-right: 7px solid #fff;
+						border-bottom: 5px solid transparent;
+						position: absolute;
+						right: 0;
+						top: 50%;
+						margin-top: -5px;
+					}
+				}
+			}
+		}
+	}
+
+	& div[disabled] &-ui-datepicker {
+		&__calendar {
+			color: $searchBtnColor;
+		}
+	}
+
+	&-ui {
+		&-input {
+			font-size: 18px!important;
+			color: #666666!important;
+			padding-left: 15px!important;
+			font-weight: normal!important;
+
+			@include placeholder () {
+				font-size: 18px;
+				color: rgba(100, 100, 100, 0.75);
+			}
+		}
+
+		&-dropdown {
+			&__trigger {
+				.form-control {
+					font-size: 18px!important;
+					color: #666666!important;
+					padding-left: 15px!important;
+					font-weight: normal!important;
+					border-radius: 2px;
+					background-color: $searchBtnColor;
+
+					@include adaptivity(min-desktop-middle) {
+						min-width: 160px;
+						height: 45px;
+						line-height: 45px!important;
+						padding-left: 10px!important;
+					}
+				}
+			}
+		}
+	}
+
+	& &-ui-mobile {
+		&__header {
+			background-color: #fff;
+			color: #737373;
+		}
+
+		&__back {
+			left: 0px;
+			top: 0px;
+			color: #666666;
+
+			&:after {
+				left: 16px;
+			}
+		}
+	}
 }
 
 .react-datepicker {
-  &-wrapper {
-    .widget-ui-input {
-      font-weight: 300!important;
-    }
-  }
+	&-wrapper {
+		.widget-ui-input {
+			font-weight: 300!important;
+		}
+	}
 }
