@@ -77,7 +77,7 @@ export default class Datepicker extends React.Component {
 	 * @returns {XML}
 	 */
 	renderCustomInput() {
-		const { inputProps, date, isDisableable, getRef, tooltipIsActive, tooltipText } = this.props;
+		const { inputProps, date, getRef, tooltipIsActive, tooltipText } = this.props;
 		const formattedDate = date ? date.format('D MMMM, dd') : '';
 
 		if (getRef) {
@@ -100,7 +100,7 @@ export default class Datepicker extends React.Component {
 
 			{this.renderCloser()}
 
-			{!isDisableable || !this.state.isActive ? <div className="widget-ui-datepicker__calendar"/> : null}
+			<div className="widget-ui-datepicker__calendar"/>
 		</div>;
 	}
 
