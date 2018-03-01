@@ -525,7 +525,7 @@
 				}
 
 				@include adaptivity (phone) {
-					top: 13px;
+					top: 45px;
 
 					&-previous {
 						left: 60px;
@@ -794,6 +794,18 @@
 					display: none;
 				}
 			}
+		}
+	}
+	
+	&-popper[data-placement$=end] {
+		@include adaptivity (min-desktop-middle) {
+			left: 173px !important;
+		}
+	}
+	
+	&-popper[data-placement$=start] {
+		@include adaptivity (min-desktop-middle) {
+			left: -173px !important;
 		}
 	}
 }

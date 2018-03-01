@@ -11,7 +11,7 @@ export default class Datepicker extends React.Component {
 
 		this.type = null;
 		this.placeholder = '';
-		this.popperPlacement = null;
+		this.popperPlacement = '';
 		this.tooltipText = '';
 		this.showErrors = false;
 		this.isDisableable = false;
