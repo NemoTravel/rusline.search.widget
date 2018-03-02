@@ -771,29 +771,33 @@
 }
 
 .react-datepicker {
+	&-super-wrapper__closer-wrapper {
+		position: relative;
+	
+		.widget-ui-input__closer {
+			opacity: 1;
+			right: -5px;
+			top: -50px;
+			box-shadow: none;
+			width: 19px;
+			height: 19px;
+			position: absolute;
+			z-index: 10;
+			border-radius: 50%;
+			cursor: pointer;
+			transition: all .2s;
+			background: #ff1723 url(https://tickets.rusline.aero/templates/frida/css/img/sprite.svg) -45px -15px;
+
+			&:before {
+				content: "";
+				display: none;
+			}
+		}
+	}
+	
 	&-wrapper {
 		.widget-ui-input {
 			font-weight: 300!important;
-			
-			&__closer {
-				opacity: 1;
-				right: -5px;
-				top: -5px;
-				box-shadow: none;
-				width: 19px;
-				height: 19px;
-				position: absolute;
-				z-index: 10;
-				border-radius: 50%;
-				cursor: pointer;
-				transition: all .2s;
-				background: #ff1723 url(https://tickets.rusline.aero/templates/frida/css/img/sprite.svg) -45px -15px;
-				
-				&:before {
-					content: "";
-					display: none;
-				}
-			}
 		}
 	}
 	

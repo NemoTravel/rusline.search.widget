@@ -62,6 +62,9 @@ export default class Datepicker extends React.Component {
 		if (this.props.isDisableable && this.state.isActive) {
 			this.setState({ isActive: false });
 			this.props.selectDate(null, this.props.type);
+			setTimeout(() => {
+				this.calendar.setOpen(false);
+			}, 100);
 		}
 	}
 
@@ -98,8 +101,6 @@ export default class Datepicker extends React.Component {
 				/>
 			</Tooltip>
 
-			{this.renderCloser()}
-
 			<div className="widget-ui-datepicker__calendar"/>
 		</div>;
 	}
@@ -111,22 +112,27 @@ export default class Datepicker extends React.Component {
 			return specialDate && date.format('YYYY-MM-DD') === specialDate.format('YYYY-MM-DD') ? 'widget-ui-datepicker__specialDay' : null;
 		};
 
-		return <DatePicker
-			ref={calendar => (this.calendar = calendar)}
-			disabled={isIE() ? false : !this.state.isActive}
-			locale={locale}
-			dayClassName={specialDayClassName}
-			customInput={this.renderCustomInput()}
-			calendarClassName={`widget-ui-datepicker widget-ui-datepicker_${type}`}
-			dateFormat={Datepicker.dateFormat}
-			dateFormatCalendar={Datepicker.dateFormatCalendar}
-			selected={date}
-			monthsShown={2}
-			onClickOutside={() => date ? null : this.disable()}
-			onFocus={this.enable}
-			{...this.props}
-		>
-			{this.props.children}
-		</DatePicker>;
+		return <div className="react-datepicker-super-wrapper">
+			<DatePicker
+				ref={calendar => (this.calendar = calendar)}
+				disabled={isIE() ? false : !this.state.isActive}
+				locale={locale}
+				dayClassName={specialDayClassName}
+				customInput={this.renderCustomInput()}
+				calendarClassName={`widget-ui-datepicker widget-ui-datepicker_${type}`}
+				dateFormat={Datepicker.dateFormat}
+				dateFormatCalendar={Datepicker.dateFormatCalendar}
+				selected={date}
+				monthsShown={2}
+				onClickOutside={() => date ? null : this.disable()}
+				onFocus={this.enable}
+				{...this.props}
+			>
+				{this.props.children}
+			</DatePicker>
+			<div className="react-datepicker-super-wrapper__closer-wrapper">
+				{this.renderCloser()}
+			</div>
+		</div>;
 	}
 }
